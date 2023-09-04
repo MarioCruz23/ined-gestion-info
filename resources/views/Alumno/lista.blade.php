@@ -4,11 +4,11 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Alumnos Registrados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formalumno') }}">Nuevo Docente</a>
-            <!-- @if(session(''))
+            @if(session('alumnoEliminado'))
             <div class="alert alert-success">
-                {{ session('') }}
+                {{ session('alumnoEliminado') }}
             </div>
-            @endif -->
+            @endif
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -38,6 +38,14 @@
                         <td>{{ $alumno->correo }}</td>
                         <td>{{ $alumno->cui }}</td>
                         <td>{{ $alumno->genero }}</td>
+                        <td>
+                            <form action="{{ route('deletealumno', $alumno->id) }}" method="POST" class="Alert-eliminar">
+                                @csrf @method('DELETE')
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del alumno?');" class="btn btn-danger btn-block">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
                         
                     </tr>
                 @endforeach

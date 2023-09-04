@@ -41,3 +41,5 @@ Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savea
 ->name('savealumno');
 
 Route::get('/listaralumno', [App\Http\Controllers\AlumnoController::class, 'listaralumno']);
+
+Route::delete('/deletealumno/{id}',[App\Http\Controllers\AlumnoController::class, 'deletealumno'])->name('deletealumno');

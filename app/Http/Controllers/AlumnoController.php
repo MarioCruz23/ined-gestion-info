@@ -34,4 +34,8 @@ class AlumnoController extends Controller
 
         return view('Alumno.lista', $data);
     }
+    public function deletealumno ($id){
+        alumno::destroy($id);
+        return back()->with('alumnoEliminado', 'Alumno Eliminado');
+    }
 }
