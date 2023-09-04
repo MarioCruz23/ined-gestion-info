@@ -39,3 +39,5 @@ Route::get('/formalumno',[App\Http\Controllers\AlumnoController::class, 'registr
 
 Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savealumno'])
 ->name('savealumno');
+
+Route::get('/listaralumno', [App\Http\Controllers\AlumnoController::class, 'listaralumno']);

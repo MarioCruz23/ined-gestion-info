@@ -29,4 +29,9 @@ class AlumnoController extends Controller
 
         return back()->with('alumnoGuardado', 'Alumno Guardado');
     }
+    public function listaralumno (){
+        $data['alumnos'] = alumno::paginate(50);
+
+        return view('Alumno.lista', $data);
+    }
 }
