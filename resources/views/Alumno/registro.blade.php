@@ -1,11 +1,12 @@
 @extends('layouts.app')
-    <div class="container mt-5">
+<div class="container mt-5">
+<div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
                 <!-- Mensaje flash -->
-                @if(session('docenteGuardado'))
+                @if(session('alumnoGuardado'))
                 <div class="alert alert-success">
-                    {{ session('docenteGuardado') }}
+                    {{ session('alumnoGuardado') }}
                 </div>
                 @endif
                 <!-- validación de errores -->
@@ -19,10 +20,14 @@
                 </div>
                 @endif
                 <div class="card">
-                    <form action="{{ route('savedocente') }}" method="POST">
+                    <form action="{{ route('savealumno') }}" method="POST">
                         @csrf
-                        <div class="card-header text-center">Agregar Docente</div>
+                        <div class="card-header text-center">Agregar Estudiante</div>
                         <div class="card-body">
+                            <div class="row form-group">
+                                <label form="" class="clo-2">Código Estudiante</label>
+                                <input type="text" name="codigoes" class="form-control col-md-9">
+                            </div>
                             <div class="row form-group">
                                 <label form="" class="clo-2">Nombre</label>
                                 <input type="text" name="nombre" class="form-control col-md-9">
@@ -52,6 +57,10 @@
                                 <input type="text" name="correo" class="form-control col-md-9">
                             </div>
                             <div class="row form-group">
+                                <label form="" class="clo-2">CUI</label>
+                                <input type="text" name="cui" class="form-control col-md-9">
+                            </div>
+                            <div class="row form-group">
                                 <label for="genero" class="col-2">Género</label>
                                 <div class="col-md-9">
                                     <select name="genero" id="genero" class="form-control">
@@ -70,3 +79,5 @@
             </div>
         </div>
     </div>
+
+</div>

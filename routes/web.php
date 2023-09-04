@@ -27,10 +27,15 @@ Route::get('/formdocente',[App\Http\Controllers\HomeController::class, 'registro
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])
 ->name('savedocente');
 
-Route::get('/', [App\Http\Controllers\DocenteController::class, 'listardocente']);
+Route::get('/listardocente', [App\Http\Controllers\DocenteController::class, 'listardocente']);
 
 Route::delete('/delete/{id}',[App\Http\Controllers\DocenteController::class, 'delete'])->name('delete');
 
 Route::get('/editdocente/{id}',[App\Http\Controllers\DocenteController::class, 'editdocente'])->name('editdocente');
 
 Route::patch('/edit/{id}',[App\Http\Controllers\DocenteController::class, 'edit'])->name('edit');
+
+Route::get('/formalumno',[App\Http\Controllers\AlumnoController::class, 'registroalumno']);
+
+Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savealumno'])
+->name('savealumno');

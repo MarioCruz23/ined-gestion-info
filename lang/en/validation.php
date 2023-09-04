@@ -163,6 +163,11 @@ return [
     */
 
     'custom' => [
+        'codigoes' => [
+            'required' => 'El código del estudiante es requerido',
+            'string' => 'El código del estudiante tiene que ser numerico',
+            'max:8' => 'El código del estudiante es demasiado largo'
+        ],
         'nombre' => [
             'required' => 'El nombre es requerido',
             'string' => 'El nombre tiene que ser texto',
@@ -196,6 +201,11 @@ return [
             'max:255' => 'El correo es demasiado largo',
             'email' => 'Formato de correo incorrecto',
             'unique' => 'Correo existente'
+        ],
+        'cui' => [
+            'required' => 'El cui es requerido',
+            'string' => 'El cui tiene que ser numerico',
+            'max:8' => 'El cui es demasiado largo'
         ],
         'genero' => [
             'required' => 'El genero es requerido'
