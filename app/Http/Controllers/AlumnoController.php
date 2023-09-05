@@ -38,4 +38,14 @@ class AlumnoController extends Controller
         alumno::destroy($id);
         return back()->with('alumnoEliminado', 'Alumno Eliminado');
     }
+    public function editalumno($id){
+        $editalumno = alumno::findOrFail($id);
+        $generos = ['Masculino', 'Femenino'];
+        return view('Alumno.editalumno', compact('editalumno', 'generos'));
+    }     
+    public function editalu(Request $request, $id){
+        $datoalumno = request()->except((['_token','_method']));
+        alumno::where('id', '=', $id)->update($datoalumno);
+        return back()->with('alumnoModificado','Dato fue modificado');
+    }
 }

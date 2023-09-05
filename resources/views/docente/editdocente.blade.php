@@ -22,7 +22,7 @@
                     <form action="{{ route('edit', $editdocente->id) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <div class="card-header text-center">Modificar Docente</div>
+                        <div class="card-header text-center">Editar Docente</div>
                         <div class="card-body">
                             <div class="row form-group">
                                 <label form="" class="clo-2">Nombre</label>

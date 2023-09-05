@@ -43,3 +43,7 @@ Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savea
 Route::get('/listaralumno', [App\Http\Controllers\AlumnoController::class, 'listaralumno']);
 
 Route::delete('/deletealumno/{id}',[App\Http\Controllers\AlumnoController::class, 'deletealumno'])->name('deletealumno');
+
+Route::get('/editalumno/{id}',[App\Http\Controllers\AlumnoController::class, 'editalumno'])->name('editalumno');
+
+Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'editalu'])->name('editalu');
