@@ -36,12 +36,17 @@
                             </div>
                             <div class="row form-group">
                                 <label form="" class="clo-2">Descripción</label>
-                                <textarea class="form-control" type="text" name="descripcion" rows="3" value="{{ $editadmon->descripcion }}"></textarea>
+                                <textarea class="form-control" type="text" name="descripcion" rows="3">{{ $editadmon->descripcion }}</textarea>
                             </div>
                             <div class="row form-group">
-                                <label for="" class="clo-2">Archivo o imagen</label>
-                                <input class="form-control" type="file" name="archivo" value="{{ $editadmon->archivo }}">
+                                <label for="" class="col-2">Archivo actual:</label>
+                                @if($editadmon->archivo)
+                                    <a href="{{ asset('archivos/' . $editadmon->archivo) }}" target="_blank">Ver archivo</a>
+                                @else
+                                    <span>No hay archivo adjunto</span>
+                                @endif
                             </div>
+
                             </div>
                             <div class="row form-group">
                                 <button type="submit" class="btn btn-success col-md-9 offset-2">Editar</button>
