@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('administración', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('codigoadmon');
+            $table->string('nombreact');
+            $table->string('fecha'); 
+            $table->string('descripcion');
+            $table->string('archivo');
+        });
     }
 
     /**
