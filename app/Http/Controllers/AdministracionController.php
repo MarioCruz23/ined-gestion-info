@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class AdministracionController extends Controller
 {
-    //
+    public function registro(){
+        return view('administracion.registroadmon');
+    }
 }
