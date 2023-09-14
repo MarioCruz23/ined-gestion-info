@@ -32,4 +32,8 @@ class AdministracionController extends Controller
     Administracion::create($admondata);
         return back()->with('actividadAdmonGuardado', 'Actividad administrativa guardada');
     }
+    public function listaradmon(){
+        $admon['admons']=Administracion::paginate(10);
+        return view('administracion.listaadmon', $admon);
+    }
 }
