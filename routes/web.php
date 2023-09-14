@@ -58,3 +58,5 @@ Route::get('/listaradmon', [App\Http\Controllers\AdministracionController::class
 Route::delete('/deleteadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'deleteadmon'])->name('deleteadmon');
 
 Route::get('/editadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'editadmon'])->name('editadmon');
+
+Route::patch('/editad/{id}',[App\Http\Controllers\AdministracionController::class, 'editad'])->name('editad');
