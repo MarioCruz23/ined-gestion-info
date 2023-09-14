@@ -36,4 +36,8 @@ class AdministracionController extends Controller
         $admon['admons']=Administracion::paginate(10);
         return view('administracion.listaadmon', $admon);
     }
+    public function deleteadmon($id){
+        Administracion::destroy($id);
+        return back()->with('actividadadmonEliminado', 'Actividad Aministrativa Eliminado');
+    }
 }
