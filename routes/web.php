@@ -50,5 +50,5 @@ Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'edi
 
 Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, 'registro']);
 
-Route::post('/saveadmon', [App\Http\Controllers\DocenteController::class, 'saveadmon'])
+Route::post('/saveadmon', [App\Http\Controllers\AdministracionController::class, 'saveadmon'])
 ->name('saveadmon');

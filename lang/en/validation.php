@@ -210,6 +210,26 @@ return [
         'genero' => [
             'required' => 'El genero es requerido'
         ],
+        'codigoadmon' => [
+            'required' => 'El código de la actividad es requerida',
+            'string' => 'El código del estudiante tiene que ser numerico',
+        ],
+        'nombreact' => [
+            'required' => 'El nombre es requerido',
+            'string' => 'El nombre tiene que ser texto',
+            'max:255' => 'El nombre es demasiado largo'
+        ],
+        'fecha' => [
+            'required' => 'La fecha es requerido'
+        ],
+        'descripcion' => [
+            'required' => 'La descripción es requerida',
+            'string' => 'La descripción tiene que ser texto',
+            'max:255' => 'La descripción es demasiado largo'
+        ],
+        'archivo' => [
+            'required' => 'La fecha es requerido'
+        ],
     ],
 
     /*

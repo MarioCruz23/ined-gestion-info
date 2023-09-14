@@ -3,13 +3,12 @@
 <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
-                <!-- Mensaje flash 
-                @if(session('alumnoGuardado'))
+                Mensaje flash 
+                @if(session('actividadAdmonGuardado'))
                 <div class="alert alert-success">
-                    {{ session('alumnoGuardado') }}
+                    {{ session('actividadAdmonGuardado') }}
                 </div>
                 @endif
-                
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -18,9 +17,9 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif-->
+                @endif
                 <div class="card">
-                    <form action="" method="POST">
+                    <form action="{{ route('saveadmon') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header text-center">Agregar Actividad administrativa</div>
                         <div class="card-body">
@@ -41,7 +40,7 @@
                                 <textarea class="form-control" type="text" name="descripcion" rows="3"></textarea>
                             </div>
                             <div class="row form-group">
-                                <label form="" class="clo-2">Archivo o imagen</label>
+                                <label for="" class="clo-2">Archivo o imagen</label>
                                 <input class="form-control" type="file" name="archivo">
                             </div>
                             </div>

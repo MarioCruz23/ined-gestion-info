@@ -9,4 +9,13 @@ class Administracion extends Model
 {
     use HasFactory;
     protected $table = 'administración';
+
+    protected $fillable = [
+        'codigoadmon',
+        'nombreact',
+        'fecha',
+        'descripcion',
+        'archivo',
+    ];
+    public $timestamps = false;
 }

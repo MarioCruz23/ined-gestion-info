@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('fecha'); 
             $table->string('descripcion');
             $table->string('archivo');
+            $table->timestamps();
         });
     }
 
