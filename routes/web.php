@@ -49,3 +49,6 @@ Route::get('/editalumno/{id}',[App\Http\Controllers\AlumnoController::class, 'ed
 Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'editalu'])->name('editalu');
 
 Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, 'registro']);
+
+Route::post('/saveadmon', [App\Http\Controllers\DocenteController::class, 'saveadmon'])
+->name('saveadmon');
