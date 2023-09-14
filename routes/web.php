@@ -47,3 +47,5 @@ Route::delete('/deletealumno/{id}',[App\Http\Controllers\AlumnoController::class
 Route::get('/editalumno/{id}',[App\Http\Controllers\AlumnoController::class, 'editalumno'])->name('editalumno');
 
 Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'editalu'])->name('editalu');
+
+Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, 'registro']);
