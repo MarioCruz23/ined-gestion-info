@@ -52,3 +52,5 @@ Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, '
 
 Route::post('/saveadmon', [App\Http\Controllers\AdministracionController::class, 'saveadmon'])
 ->name('saveadmon');
+
+Route::get('/listaradmon', [App\Http\Controllers\AdministracionController::class, 'listaradmon']);
