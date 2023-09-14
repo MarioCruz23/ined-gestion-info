@@ -29,12 +29,17 @@
                         <td>{{ $admon->descripcion }}</td>
                         <td>{{ $admon->archivo }}</td>
                         <td>
-                        <form action="{{ route('deleteadmon', $admon->id) }}" method="POST" class="Alert-eliminar">
-                            @csrf @method('DELETE')
-                            <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-block">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </form>
+                            <div class="btn-group">
+                                <a href="{{ route('editadmon', $admon->id) }}" class="btn btn-primary mb-3 mr-3">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <form action="{{ route('deleteadmon', $admon->id) }}" method="POST" class="Alert-eliminar">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-block">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
