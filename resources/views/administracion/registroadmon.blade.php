@@ -3,7 +3,6 @@
 <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
-                Mensaje flash 
                 @if(session('actividadAdmonGuardado'))
                 <div class="alert alert-success">
                     {{ session('actividadAdmonGuardado') }}
