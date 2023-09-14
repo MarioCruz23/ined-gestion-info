@@ -56,3 +56,5 @@ Route::post('/saveadmon', [App\Http\Controllers\AdministracionController::class,
 Route::get('/listaradmon', [App\Http\Controllers\AdministracionController::class, 'listaradmon']);
 
 Route::delete('/deleteadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'deleteadmon'])->name('deleteadmon');
+
+Route::get('/editadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'editadmon'])->name('editadmon');
