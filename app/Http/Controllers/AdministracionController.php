@@ -40,4 +40,14 @@ class AdministracionController extends Controller
         Administracion::destroy($id);
         return back()->with('actividadadmonEliminado', 'Actividad Aministrativa Eliminado');
     }
+    public function editadmon($id){
+        $editadmon = Administracion::findOrFail($id);
+        
+        return view('administracion.editadmon', compact('editadmon'));
+    }     
+    public function editad(Request $request, $id){
+        $datoadmon = request()->except((['_token','_method']));
+        Administracion::where('id', '=', $id)->update($datoadmon);
+        return back()->with('actividadAdministrativoModificado','Dato administrativo fue modificado');
+    }
 }
