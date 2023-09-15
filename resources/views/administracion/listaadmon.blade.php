@@ -27,7 +27,13 @@
                         <td>{{ $admon->nombreact }}</td>
                         <td>{{ $admon->fecha }}</td>
                         <td>{{ $admon->descripcion }}</td>
-                        <td>{{ $admon->archivo }}</td>
+                        <td>
+                            @if($admon->archivo)
+                                <a href="{{ asset('uploads/' . $admon->archivo) }}" target="_blank">Ver archivo</a>
+                            @else
+                                <span>No hay archivo adjunto</span>
+                            @endif
+                        </td>
                         <td>
                             <div class="btn-group">
                                 <a href="{{ route('editadmon', $admon->id) }}" class="btn btn-primary mb-3 mr-3">
