@@ -18,18 +18,14 @@ class AdministracionController extends Controller
             'descripcion' => 'required|string|max:255',
             'archivo' => 'file|required'
         ]);
-        $archivo = $request->file('archivo');
-        $nombreArchivo = $archivo->store('archivos');
-
-        $admondata = [
-            'codigoadmon' => $request->input('codigoadmon'),
-            'nombreact' => $request->input('nombreact'),
-            'fecha' => $request->input('fecha'),
-            'descripcion' => $request->input('descripcion'),
-            'archivo' => $nombreArchivo,
-    ];
-
-    Administracion::create($admondata);
+        $admondata = $request->except('_token');
+        if ($request->hasFile('archivo')) {
+            $file = $request->file('archivo');
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('uploads'), $fileName);
+            $admondata['archivo'] = $fileName;
+        }
+        Administracion::insert($admondata);
         return back()->with('actividadAdmonGuardado', 'Actividad administrativa guardada');
     }
     public function listaradmon(){

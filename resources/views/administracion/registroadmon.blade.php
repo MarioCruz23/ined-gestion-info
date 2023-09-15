@@ -39,9 +39,15 @@
                                 <textarea class="form-control" type="text" name="descripcion" rows="3"></textarea>
                             </div>
                             <div class="row form-group">
-                                <label for="" class="clo-2">Archivo o imagen</label>
+                                <label for="" class="col-2">Imagen o Archivo</label>
                                 <input class="form-control" type="file" name="archivo">
                             </div>
+                            @if(isset($admondata['archivo']))
+                                <div class="row form-group">
+                                    <label class="col-2">Nombre del archivo:</label>
+                                    <span>{{ basename($admondata['archivo']) }}</span>
+                                </div>
+                            @endif
                             </div>
                             <div class="row form-group">
                                 <button type="submit" class="btn btn-success col-md-9 offset-2">Guardar</button>

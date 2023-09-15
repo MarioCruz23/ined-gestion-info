@@ -35,18 +35,17 @@
                                 <input type="date" name="fecha" class="form-control col-md-9" value="{{ $editadmon->fecha }}">
                             </div>
                             <div class="row form-group">
-                                <label form="" class="clo-2">Descripción</label>
+                                <label form="" class="clo-2">Descripción:</label>
                                 <textarea class="form-control" type="text" name="descripcion" rows="3">{{ $editadmon->descripcion }}</textarea>
                             </div>
                             <div class="row form-group">
-                                <label for="" class="col-2">Archivo actual:</label>
+                                <label form="" class="clo-2">Archivo o imagen:</label>
                                 @if($editadmon->archivo)
-                                    <a href="{{ asset('archivos/' . $editadmon->archivo) }}" target="_blank">Ver archivo</a>
+                                    <a href="{{ asset('uploads/' . $editadmon->archivo) }}" target="_blank">Ver archivo</a>
                                 @else
                                     <span>No hay archivo adjunto</span>
                                 @endif
                             </div>
-
                             </div>
                             <div class="row form-group">
                                 <button type="submit" class="btn btn-success col-md-9 offset-2">Editar</button>
