@@ -48,7 +48,7 @@
     <h1 class="j">Menú de gestiones</h1>
     <div class="menu-container">
         <div class="galeria">
-            <a href="#">
+            <a href="{{ url('/menudocen') }}">
 
                 <div class="ima">
                     <img class="m"
@@ -60,7 +60,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="#">
+            <a href="{{ url('/menualu') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/nino-estudiante-dibujos-animados-suministros_18591-2863.jpg?w=740">
@@ -71,7 +71,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="#">
+            <a href="">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-gratis/grupo-personas-que-graduan-ilustrado_23-2148571139.jpg?w=740&t=st=1694844901~exp=1694845501~hmac=d8c4be615c993d48bbae61b1724e173ef22a627aaed6851cbfa16d7d43bf2c1e">
@@ -88,7 +88,7 @@
     <br>
     <div class="menu-container">
     <div class="galeria">
-            <a href="#">
+            <a href="">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/gerente-administrador-hombre-hotel_51635-7414.jpg?w=740">
@@ -99,7 +99,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="#">
+            <a href="">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/viejo-libro-abierto-ilustracion-vector-texto-abstracto-estilo-dibujos-animados_543641-1011.jpg?w=2000">
@@ -110,7 +110,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="#">
+            <a href="{{ url('/menucurso') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://previews.123rf.com/images/iconicbestiary/iconicbestiary1602/iconicbestiary160200011/53122280-lecci%C3%B3n-de-la-escuela-los-peque%C3%B1os-estudiantes-y-el-profesor-aula-con-pizarra-verde-mesa-de-los.jpg">
