@@ -46,6 +46,9 @@
 </style>
 <body>
     <h1 class="j">Menú de gestión de Docentes</h1>
+    <div>
+        <a class="btn btn-success mb-4" href="{{ url('/home') }}">Menú Principal</a>
+    </div>
     <div class="menu-container">
         <div class="galeria">
             <a href="{{ url('/formdocente') }}">
