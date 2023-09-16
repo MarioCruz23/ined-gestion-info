@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('asignacion_cursodocente', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('docente_id')->unsigned();
+            $table->foreign('docente_id')->references('id')->on('docente')->onDelete("cascade");
+            $table->bigInteger('curso_id')->unsigned();
             $table->timestamps();
+            $table->foreign('curso_id')->references('id')->on('curso')->onDelete("cascade");
+            $table->string('grado');
         });
     }
 
