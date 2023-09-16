@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('curso', function (Blueprint $table) {
-            $table->id();
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            $table->string('codigocurso');
+            $table->string('nombre');
+            $table->string('area');
+            $table->bigInteger('pensum_id')->unsigned();
             $table->timestamps();
+            $table->foreign('pensum_id')->references('id')->on('pensum')->onDelete("cascade");
         });
     }
 
