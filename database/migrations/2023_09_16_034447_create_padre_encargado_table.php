@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('padre_encargado', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('telefono');
+            $table->string('direccion');
+            $table->bigInteger('alumno_id')->unsigned();
             $table->timestamps();
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
         });
     }
 
