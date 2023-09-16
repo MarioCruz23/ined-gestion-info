@@ -10,9 +10,6 @@ class AlumnoController extends Controller
     public function registroalumno (){
         return view('Alumno.registro');
     }
-    public function menualumno (){
-        return view('Alumno.Menualu');
-    }
     public function savealumno(Request $request){
 
         $validator = $this->validate($request, [

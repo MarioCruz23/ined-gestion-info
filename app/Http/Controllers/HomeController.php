@@ -28,4 +28,7 @@ class HomeController extends Controller
     public function registro(){
         return view('docente.registro');
     }
+    public function menualumno(){
+        return view('Alumno.Menualu');
+    }
 }
