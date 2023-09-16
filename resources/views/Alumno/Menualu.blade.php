@@ -45,7 +45,7 @@
     }
 </style>
 <body>
-    <h1 class="j">Menú de gestiones</h1>
+    <h1 class="j">Menú de gestión de Estudiantes</h1>
     <div class="menu-container">
         <div class="galeria">
             <a href="{{ url('/formdocente') }}">
