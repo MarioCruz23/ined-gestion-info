@@ -37,4 +37,7 @@ class HomeController extends Controller
     public function menucurso(){
         return view('Curso.Menucurso');
     }
+    public function menuadmon(){
+        return view('Curso.Menuadmon');
+    }
 }
