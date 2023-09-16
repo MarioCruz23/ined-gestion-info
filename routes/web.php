@@ -26,6 +26,8 @@ Route::get('/formdocente',[App\Http\Controllers\HomeController::class, 'registro
 
 Route::get('/menualu',[App\Http\Controllers\HomeController::class, 'menualumno']);
 
+Route::get('/menudocen',[App\Http\Controllers\HomeController::class, 'menudocente']);
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])
 ->name('savedocente');
 

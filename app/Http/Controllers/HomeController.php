@@ -32,6 +32,6 @@ class HomeController extends Controller
         return view('Alumno.Menualu');
     }
     public function menudocente(){
-        return view('Alumno.Menudocente');
+        return view('docente.Menudocente');
     }
 }
