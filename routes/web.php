@@ -28,6 +28,8 @@ Route::get('/menualu',[App\Http\Controllers\HomeController::class, 'menualumno']
 
 Route::get('/menudocen',[App\Http\Controllers\HomeController::class, 'menudocente']);
 
+Route::get('/menucurso',[App\Http\Controllers\HomeController::class, 'menucurso']);
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])
 ->name('savedocente');
 
