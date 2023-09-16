@@ -88,7 +88,7 @@
     <br>
     <div class="menu-container">
     <div class="galeria">
-            <a href="">
+            <a href="{{ url('/menuadmon') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/gerente-administrador-hombre-hotel_51635-7414.jpg?w=740">

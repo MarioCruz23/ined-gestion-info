@@ -38,6 +38,6 @@ class HomeController extends Controller
         return view('Curso.Menucurso');
     }
     public function menuadmon(){
-        return view('Curso.Menuadmon');
+        return view('administracion.Menuadmon');
     }
 }
