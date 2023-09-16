@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pensum', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('archivopensum');
             $table->timestamps();
         });
     }
