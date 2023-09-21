@@ -22,49 +22,51 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/formdocente',[App\Http\Controllers\HomeController::class, 'registro']);
+Route::get('/formdocente',[App\Http\Controllers\HomeController::class, 'registro'])->middleware('auth.admin');
 
-Route::get('/menualu',[App\Http\Controllers\HomeController::class, 'menualumno']);
+Route::get('/menualu',[App\Http\Controllers\HomeController::class, 'menualumno'])->middleware('auth.admin');
 
-Route::get('/menudocen',[App\Http\Controllers\HomeController::class, 'menudocente']);
+Route::get('/menudocen',[App\Http\Controllers\HomeController::class, 'menudocente'])->middleware('auth.admin');
 
-Route::get('/menucurso',[App\Http\Controllers\HomeController::class, 'menucurso']);
+Route::get('/menucurso',[App\Http\Controllers\HomeController::class, 'menucurso'])->middleware('auth.admin');
 
-Route::get('/menuadmon',[App\Http\Controllers\HomeController::class, 'menuadmon']);
+Route::get('/menuadmon',[App\Http\Controllers\HomeController::class, 'menuadmon'])->middleware('auth.admin');
 
-Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])
+Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])->middleware('auth.admin')
 ->name('savedocente');
 
-Route::get('/listardocente', [App\Http\Controllers\DocenteController::class, 'listardocente']);
+Route::get('/listardocente', [App\Http\Controllers\DocenteController::class, 'listardocente'])->middleware('auth.admin');
 
-Route::delete('/delete/{id}',[App\Http\Controllers\DocenteController::class, 'delete'])->name('delete');
+Route::delete('/delete/{id}',[App\Http\Controllers\DocenteController::class, 'delete'])->middleware('auth.admin')->name('delete');
 
-Route::get('/editdocente/{id}',[App\Http\Controllers\DocenteController::class, 'editdocente'])->name('editdocente');
+Route::get('/editdocente/{id}',[App\Http\Controllers\DocenteController::class, 'editdocente'])->middleware('auth.admin')->name('editdocente');
 
-Route::patch('/edit/{id}',[App\Http\Controllers\DocenteController::class, 'edit'])->name('edit');
+Route::patch('/edit/{id}',[App\Http\Controllers\DocenteController::class, 'edit'])->middleware('auth.admin')->name('edit');
 
-Route::get('/formalumno',[App\Http\Controllers\AlumnoController::class, 'registroalumno']);
+Route::get('/formalumno',[App\Http\Controllers\AlumnoController::class, 'registroalumno'])->middleware('auth.admin');
 
-Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savealumno'])
+Route::post('/savealumno', [App\Http\Controllers\AlumnoController::class, 'savealumno'])->middleware('auth.admin')
 ->name('savealumno');
 
-Route::get('/listaralumno', [App\Http\Controllers\AlumnoController::class, 'listaralumno']);
+Route::get('/listaralumno', [App\Http\Controllers\AlumnoController::class, 'listaralumno'])->middleware('auth.admin');
 
-Route::delete('/deletealumno/{id}',[App\Http\Controllers\AlumnoController::class, 'deletealumno'])->name('deletealumno');
+Route::delete('/deletealumno/{id}',[App\Http\Controllers\AlumnoController::class, 'deletealumno'])->middleware('auth.admin')->name('deletealumno');
 
-Route::get('/editalumno/{id}',[App\Http\Controllers\AlumnoController::class, 'editalumno'])->name('editalumno');
+Route::get('/editalumno/{id}',[App\Http\Controllers\AlumnoController::class, 'editalumno'])->middleware('auth.admin')->name('editalumno');
 
-Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'editalu'])->name('editalu');
+Route::patch('/editalu/{id}',[App\Http\Controllers\AlumnoController::class, 'editalu'])->middleware('auth.admin')->name('editalu');
 
-Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, 'registro']);
+Route::get('/formadmon',[App\Http\Controllers\AdministracionController::class, 'registro'])->middleware('auth.admin');
 
-Route::post('/saveadmon', [App\Http\Controllers\AdministracionController::class, 'saveadmon'])
+Route::post('/saveadmon', [App\Http\Controllers\AdministracionController::class, 'saveadmon'])->middleware('auth.admin')
 ->name('saveadmon');
 
-Route::get('/listaradmon', [App\Http\Controllers\AdministracionController::class, 'listaradmon']);
+Route::get('/listaradmon', [App\Http\Controllers\AdministracionController::class, 'listaradmon'])->middleware('auth.admin');
 
-Route::delete('/deleteadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'deleteadmon'])->name('deleteadmon');
+Route::delete('/deleteadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'deleteadmon'])->middleware('auth.admin')->name('deleteadmon');
 
-Route::get('/editadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'editadmon'])->name('editadmon');
+Route::get('/editadmon/{id}',[App\Http\Controllers\AdministracionController::class, 'editadmon'])->middleware('auth.admin')->name('editadmon');
 
-Route::patch('/editad/{id}',[App\Http\Controllers\AdministracionController::class, 'editad'])->name('editad');
+Route::patch('/editad/{id}',[App\Http\Controllers\AdministracionController::class, 'editad'])->middleware('auth.admin')->name('editad');
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
