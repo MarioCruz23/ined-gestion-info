@@ -75,3 +75,5 @@ Route::get('/formpadre',[App\Http\Controllers\PadreController::class, 'padre'])-
 
 Route::post('/savepadre', [App\Http\Controllers\PadreController::class, 'savepadre'])->middleware('auth.admin')
 ->name('savepadre');
+
+Route::get('/listarpadre', [App\Http\Controllers\PadreController::class, 'listarpadre'])->middleware('auth.admin');
