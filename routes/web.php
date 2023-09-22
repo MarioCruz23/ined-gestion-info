@@ -92,3 +92,5 @@ Route::get('/formpensum',[App\Http\Controllers\PensumController::class, 'registr
 
 Route::post('/savepensum', [App\Http\Controllers\PensumController::class, 'savepensum'])
 ->middleware('auth.admin')->name('savepensum');
+
+Route::get('/listarpensum', [App\Http\Controllers\PensumController::class, 'listarpensum'])->middleware('auth.admin');

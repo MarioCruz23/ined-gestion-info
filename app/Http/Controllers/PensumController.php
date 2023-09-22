@@ -25,4 +25,8 @@ class PensumController extends Controller
         pensum::insert($pensumdata);
         return back()->with('pensumGuardado', 'Pensum guardada');
     }
+    public function listarpensum(){
+        $pensum['pensums']=pensum::paginate(10);
+        return view('pensum.listapensum', $pensum);
+    }
 }
