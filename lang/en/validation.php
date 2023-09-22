@@ -230,6 +230,9 @@ return [
         'archivo' => [
             'required' => 'La fecha es requerido'
         ],
+        'archivopensum' => [
+            'required' => 'La fecha es requerido'
+        ],
     ],
 
     /*

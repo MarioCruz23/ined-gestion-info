@@ -3,13 +3,13 @@
     <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
-                <!-- Mensaje flash 
-                @if(session('docenteGuardado'))
+                <!-- Mensaje flash -->
+                @if(session('pensumGuardado'))
                 <div class="alert alert-success">
-                    {{ session('docenteGuardado') }}
+                    {{ session('pensumGuardado') }}
                 </div>
-                @endif -->
-                <!-- validación de errores 
+                @endif
+                <!-- validación de errores -->
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -18,9 +18,9 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif -->
+                @endif 
                 <div class="card">
-                    <form action="" method="POST">
+                    <form action="{{ route('savepensum') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header text-center">Agregar Pensum</div>
                         <div class="card-body">
