@@ -44,11 +44,11 @@
                             <div class="row mb-3">
                                 <div class="col-6 offset-3">
                                     <div class="form-group">
-                                        <label>Lenguaje</label>
+                                        <label>Alumno a cargo</label>
                                         <select name="alumno_id" class="form-control" >
                                             <option value="">--Seleccione--</option>
                                             @foreach( $alumnoids as $alumnoid)
-                                                <option value="{{$alumnoid->id}}"> {{$alumnoid->nombre}}  </option>
+                                                <option value="{{$alumnoid->id}}"> {{$alumnoid->nombre}} {{$alumnoid->apellido}}  </option>
                                             @endforeach
                                         </select>
                                     </div>

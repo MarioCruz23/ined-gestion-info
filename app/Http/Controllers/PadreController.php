@@ -35,8 +35,9 @@ class PadreController extends Controller
     }
     public function editpadre($id){
         $editpadre = padreencargado::findOrFail($id);
-        return view('Alumno.editpadre', compact('editpadre'));
-    }     
+        $alumnos = alumno::all();
+        return view('Alumno.editpadre', compact('editpadre', 'alumnos'));
+    }
     public function editencargado(Request $request, $id){
         $datoencargado = request()->except((['_token','_method']));
         padreencargado::where('id', '=', $id)->update($datoencargado);

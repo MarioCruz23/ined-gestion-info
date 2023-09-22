@@ -28,14 +28,19 @@
                         <td>{{ $padre_encargado->apellido }}</td>
                         <td>{{ $padre_encargado->telefono }}</td>
                         <td>{{ $padre_encargado->direccion }}</td>
-                        <td>{{ $padre_encargado->alumno->nombre }}</td>
+                        <td>{{ $padre_encargado->alumno->nombre }} {{ $padre_encargado->alumno->apellido }}</td>
                         <td>
-                        <form action="{{ route('deletepadre', $padre_encargado->id) }}" method="POST" class="Alert-eliminar">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del padre o encargado del alumno?');" class="btn btn-danger btn-block">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
+                        <div class="btn-group">
+                            <a href="{{ route('editpadre', $padre_encargado->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <form action="{{ route('deletepadre', $padre_encargado->id) }}" method="POST" class="Alert-eliminar">
+                                @csrf @method('DELETE')
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del padre o encargado del alumno?');" class="btn btn-danger btn-block">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </div>
                         </td>
                     </tr>
                 @endforeach
