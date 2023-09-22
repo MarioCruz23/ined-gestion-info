@@ -94,3 +94,5 @@ Route::post('/savepensum', [App\Http\Controllers\PensumController::class, 'savep
 ->middleware('auth.admin')->name('savepensum');
 
 Route::get('/listarpensum', [App\Http\Controllers\PensumController::class, 'listarpensum'])->middleware('auth.admin');
+
+Route::delete('/deletepensum/{id}',[App\Http\Controllers\PensumController::class, 'deletepensum'])->middleware('auth.admin')->name('deletepensum');
