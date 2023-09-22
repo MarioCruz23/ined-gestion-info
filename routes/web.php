@@ -79,3 +79,7 @@ Route::post('/savepadre', [App\Http\Controllers\PadreController::class, 'savepad
 Route::get('/listarpadre', [App\Http\Controllers\PadreController::class, 'listarpadre'])->middleware('auth.admin');
 
 Route::delete('/deletepadre/{id}',[App\Http\Controllers\PadreController::class, 'deletepadre'])->middleware('auth.admin')->name('deletepadre');
+
+Route::get('/editpadre/{id}',[App\Http\Controllers\PadreController::class, 'editpadre'])->middleware('auth.admin')->name('editpadre');
+
+Route::patch('/editencargado/{id}',[App\Http\Controllers\PadreController::class, 'editencargado'])->middleware('auth.admin')->name('editencargado');
