@@ -29,6 +29,16 @@
                                 <span>No hay archivo adjunto</span>
                             @endif
                         </td>
+                        <td>
+                            <div class="btn-group">
+                                <form action="{{ route('deletepensum', $pensum->id) }}" method="POST" class="Alert-eliminar">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-block">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
