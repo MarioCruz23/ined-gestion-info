@@ -33,4 +33,13 @@ class PadreController extends Controller
             padreencargado::destroy($id);
         return back()->with('padreEliminado', 'Padre o Encargado Eliminado');
     }
+    public function editpadre($id){
+        $editpadre = padreencargado::findOrFail($id);
+        return view('Alumno.editpadre', compact('editpadre'));
+    }     
+    public function editencargado(Request $request, $id){
+        $datoencargado = request()->except((['_token','_method']));
+        padreencargado::where('id', '=', $id)->update($datoencargado);
+        return back()->with('padreModificado','Dato fue modificado');
+    }
 }
