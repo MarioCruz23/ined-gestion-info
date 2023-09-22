@@ -29,4 +29,8 @@ class PadreController extends Controller
 
         return view('Alumno.listapadre', $data);
     }
+    public function deletepadre($id){
+            padreencargado::destroy($id);
+        return back()->with('padreEliminado', 'Padre o Encargado Eliminado');
+    }
 }
