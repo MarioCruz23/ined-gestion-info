@@ -32,6 +32,8 @@ Route::get('/menucurso',[App\Http\Controllers\HomeController::class, 'menucurso'
 
 Route::get('/menuadmon',[App\Http\Controllers\HomeController::class, 'menuadmon'])->middleware('auth.admin');
 
+Route::get('/menupadre',[App\Http\Controllers\HomeController::class, 'menupadre'])->middleware('auth.admin');
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])->middleware('auth.admin')
 ->name('savedocente');
 
