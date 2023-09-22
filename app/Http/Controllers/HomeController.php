@@ -40,4 +40,7 @@ class HomeController extends Controller
     public function menuadmon(){
         return view('administracion.Menuadmon');
     }
+    public function menupadre(){
+        return view('Alumno.menupadre');
+    }
 }
