@@ -33,4 +33,13 @@ class PensumController extends Controller
         pensum::destroy($id);
         return back()->with('pensumEliminado', 'Pensum Eliminado');
     }
+    public function editpensum($id){
+        $editpensum = pensum::findOrFail($id);
+        return view('pensum.editpensum', compact('editpensum'));
+    }     
+    public function editpen(Request $request, $id){
+        $datopensum = request()->except((['_token','_method']));
+        Administracion::where('id', '=', $id)->update($datopensum);
+        return back()->with('pensumModificado','Dato del pensum fue modificado');
+    }
 }
