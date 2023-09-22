@@ -26,7 +26,11 @@ class PensumController extends Controller
         return back()->with('pensumGuardado', 'Pensum guardada');
     }
     public function listarpensum(){
-        $pensum['pensums']=pensum::paginate(10);
+        $pensum['pensums']=pensum::paginate(30);
         return view('pensum.listapensum', $pensum);
+    }
+    public function deletepensum($id){
+        pensum::destroy($id);
+        return back()->with('pensumEliminado', 'Pensum Eliminado');
     }
 }

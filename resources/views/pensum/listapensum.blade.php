@@ -5,11 +5,11 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Pensum Registradas</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formpensum') }}">Nuevo Pensum</a>
-            <!-- @if(session('actividadadmonEliminado'))
+            @if(session('pensumEliminado'))
             <div class="alert alert-success">
-                {{ session('actividadadmonEliminado') }}
+                {{ session('pensumEliminado') }}
             </div>
-            @endif -->
+            @endif
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -31,6 +31,9 @@
                         </td>
                         <td>
                             <div class="btn-group">
+                                <a href="{{ route('editpensum', $pensum->id) }}" class="btn btn-primary mb-3 mr-3">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
                                 <form action="{{ route('deletepensum', $pensum->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
                                     <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-block">
