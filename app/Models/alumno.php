@@ -10,4 +10,8 @@ class alumno extends Model
     use HasFactory;
     
     public $timestamps = false;
+
+    public function padres(){
+        return $this->hasMany(padreencargado::class, 'alumno_id');
+    }
 }

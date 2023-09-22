@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\alumno;
+use App\Models\padreencargado;
 
 class AlumnoController extends Controller
 {
     public function registroalumno (){
         return view('Alumno.registro');
-    }
-    public function padre (){
-        return view('Alumno.formpadre');
     }
     public function savealumno(Request $request){
 
