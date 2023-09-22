@@ -72,3 +72,6 @@ Route::patch('/editad/{id}',[App\Http\Controllers\AdministracionController::clas
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
 
 Route::get('/formpadre',[App\Http\Controllers\AlumnoController::class, 'padre'])->middleware('auth.admin');
+
+Route::post('/savepadre', [App\Http\Controllers\AlumnoController::class, 'savepadre'])->middleware('auth.admin')
+->name('savepadre');
