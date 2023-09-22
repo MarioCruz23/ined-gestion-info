@@ -39,7 +39,7 @@ class PensumController extends Controller
     }     
     public function editpen(Request $request, $id){
         $datopensum = request()->except((['_token','_method']));
-        Administracion::where('id', '=', $id)->update($datopensum);
+        pensum::where('id', '=', $id)->update($datopensum);
         return back()->with('pensumModificado','Dato del pensum fue modificado');
     }
 }
