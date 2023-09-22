@@ -24,4 +24,9 @@ class PadreController extends Controller
         padreencargado::insert($padredata);
         return back()->with('padreGuardado', 'Padre o encargado Guardado');
     }
+    public function listarpadre(){
+        $data['padre_encargados'] = padreencargado::paginate(50);
+
+        return view('Alumno.listapadre', $data);
+    }
 }
