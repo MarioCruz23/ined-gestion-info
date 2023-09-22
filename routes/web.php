@@ -77,3 +77,5 @@ Route::post('/savepadre', [App\Http\Controllers\PadreController::class, 'savepad
 ->name('savepadre');
 
 Route::get('/listarpadre', [App\Http\Controllers\PadreController::class, 'listarpadre'])->middleware('auth.admin');
+
+Route::delete('/deletepadre/{id}',[App\Http\Controllers\PadreController::class, 'deletepadre'])->middleware('auth.admin')->name('deletepadre');
