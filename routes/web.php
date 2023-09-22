@@ -87,3 +87,5 @@ Route::delete('/deletepadre/{id}',[App\Http\Controllers\PadreController::class, 
 Route::get('/editpadre/{id}',[App\Http\Controllers\PadreController::class, 'editpadre'])->middleware('auth.admin')->name('editpadre');
 
 Route::patch('/editencargado/{id}', [App\Http\Controllers\PadreController::class, 'editencargado'])->middleware('auth.admin')->name('editencargado');
+
+Route::get('/formpensum',[App\Http\Controllers\PensumController::class, 'registro'])->middleware('auth.admin');
