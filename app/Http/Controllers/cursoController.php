@@ -31,5 +31,14 @@ class cursoController extends Controller
         curso::destroy($id);
         return back()->with('cursoEliminado', 'Curso Eliminado');
     }
-    
+    public function editcurso($id){
+        $editcurso = curso::findOrFail($id);
+        $pensums = pensum::all();
+        return view('Curso.editcurso', compact('editcurso', 'pensums'));
+    }
+    public function editcur(Request $request, $id){
+        $datocurso = request()->except((['_token','_method']));
+        curso::where('id', '=', $id)->update($datocurso);
+        return back()->with('cursoModificado','Curso modificado');
+    }
 }

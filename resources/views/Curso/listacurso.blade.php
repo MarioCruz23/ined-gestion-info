@@ -28,15 +28,17 @@
                         <td>{{ $curso->area }}</td>
                         <td>{{ $curso->pensum->nombre }}</td>
                         <td>
-                        <div class="btn-group">
-                            
-                            <form action="{{ route('deletecurso', $curso->id) }}" method="POST" class="Alert-eliminar">
-                                @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso?');" class="btn btn-danger btn-block">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        </div>
+                            <div class="btn-group">
+                                <a href="{{ route('editcurso', $curso->id) }}" class="btn btn-primary mb-3 mr-3">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <form action="{{ route('deletecurso', $curso->id) }}" method="POST" class="Alert-eliminar">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso?');" class="btn btn-danger btn-block">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

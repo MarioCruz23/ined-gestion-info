@@ -127,4 +127,4 @@ Route::delete('/deletecurso/{id}',[App\Http\Controllers\cursoController::class, 
 
 Route::get('/editcurso/{id}',[App\Http\Controllers\cursoController::class, 'editcurso'])->middleware('auth.admin')->name('editcurso');
 
-Route::patch('/editcurso/{id}', [App\Http\Controllers\cursoController::class, 'editcurso'])->middleware('auth.admin')->name('editcurso');
+Route::patch('/editcur/{id}', [App\Http\Controllers\cursoController::class, 'editcur'])->middleware('auth.admin')->name('editcur');
