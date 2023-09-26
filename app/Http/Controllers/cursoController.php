@@ -23,4 +23,8 @@ class cursoController extends Controller
         curso::insert($cursodata);
         return back()->with('cursoGuardado', 'Curso Guardado');
     }
+    public function listarcurso(){
+        $data['cursos'] = curso::paginate(50);
+        return view('Curso.listacurso', $data);
+    }
 }

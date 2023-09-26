@@ -12,6 +12,6 @@ class curso extends Model
     protected $table = 'curso';
 
     public function pensum(){
-        return $this->hasMany(pensum::class, 'pensum_id');
+        return $this->belongsTo(pensum::class, 'pensum_id');
     }
 }
