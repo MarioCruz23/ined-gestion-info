@@ -46,4 +46,14 @@ class graduandosController extends Controller
         graduandos::destroy($id);
         return back()->with('graduandoEliminado', 'Graduando Eliminado');
     }
+    public function editgraduando($id){
+        $editgraduando = graduandos::findOrFail($id);
+        $pensums=pensum::all();
+        return view('Graduandos.edit', compact('editgraduando', 'pensums'));
+    }     
+    public function editgrad(Request $request, $id){
+        $datograduando = request()->except((['_token','_method']));
+        graduandos::where('id', '=', $id)->update($datograduando);
+        return back()->with('graduandoModificado',' dato del Graduando fue modificado');
+    }
 }

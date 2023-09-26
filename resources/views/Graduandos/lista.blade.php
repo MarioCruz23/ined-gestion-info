@@ -45,6 +45,9 @@
                         </td>
                         <td>
                             <div class="btn-group">
+                            <a href="{{ route('editgraduando', $graduando->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
                                 <form action="{{ route('deletegraduando', $graduando->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
                                     <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del graduando?');" class="btn btn-danger btn-block">
