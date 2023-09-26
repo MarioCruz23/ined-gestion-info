@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
             $table->string('grado');
             $table->string('anio');
+            $table->string('nacionalidad');
         });
     }
 

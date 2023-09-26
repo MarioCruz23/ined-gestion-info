@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('fecha'); 
             $table->string('descripcion');
             $table->string('archivo');
+            $table->bigInteger('docente_id')->unsigned();
             $table->timestamps();
+            $table->foreign('docente_id')->references('id')->on('docente')->onDelete("cascade");
         });
     }
 
