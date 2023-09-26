@@ -9,8 +9,10 @@ class graduandos extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $table = 'graduandos';
 
-    public function pensum(){
-        return $this->hasMany(pensum::class, 'pensum_id');
+    public function pensum() {
+        return $this->belongsTo(pensum::class, 'pensum_id');
     }
+    
 }

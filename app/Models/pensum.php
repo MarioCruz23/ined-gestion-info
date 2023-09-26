@@ -15,10 +15,10 @@ class pensum extends Model
         'archivopensum',
     ];
     public $timestamps = false;
-    public function curso(){
+    public function cursos(){
         return $this->hasMany(curso::class, 'pensum_id');
     }
-    public function graduandos(){
-        return $this->hasMany(graduandos::class, 'pensum_id');
+    public function graduandos() {
+        return $this->hasMany(Graduandos::class, 'pensum_id');
     }
 }
