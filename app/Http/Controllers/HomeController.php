@@ -46,4 +46,7 @@ class HomeController extends Controller
     public function menupensum(){
         return view('pensum.menupensum');
     }
+    public function menugraduandos(){
+        return view('Graduandos.menu');
+    }
 }
