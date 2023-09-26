@@ -10,7 +10,7 @@
                     {{ session('padreGuardado') }}
                 </div>
                 @endif
-                <!-- validación de errores
+                validación de errores
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +19,7 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif -->
+                @endif
                 <div class="card">
                     <form action="{{ route('savepadre') }}" method="POST">
                         @csrf

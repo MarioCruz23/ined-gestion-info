@@ -47,11 +47,11 @@
 <body>
     <h1 class="j">Menú de gestión de Cursos</h1>
     <div>
-        <a class="btn btn-success mb-4" href="{{ url('/home') }}">Menú Principal</a>
+        <a class="btn btn-success mb-4" href="{{ url('/admin') }}">Menú Principal</a>
     </div>
     <div class="menu-container">
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/formcurso') }}">
 
                 <div class="ima">
                     <img class="m"

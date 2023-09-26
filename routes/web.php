@@ -115,3 +115,16 @@ Route::delete('/deletegraduando/{id}',[App\Http\Controllers\graduandosController
 Route::get('/editgraduando/{id}',[App\Http\Controllers\graduandosController::class, 'editgraduando'])->middleware('auth.admin')->name('editgraduando');
 
 Route::patch('/editgrad/{id}', [App\Http\Controllers\graduandosController::class, 'editgrad'])->middleware('auth.admin')->name('editgrad');
+
+Route::get('/formcurso',[App\Http\Controllers\cursoController::class, 'formcurso'])->middleware('auth.admin');
+
+Route::post('/savecurso', [App\Http\Controllers\cursoController::class, 'savecurso'])
+->middleware('auth.admin')->name('savecurso');
+
+Route::get('/listarcurso', [App\Http\Controllers\cursoController::class, 'listarcurso'])->middleware('auth.admin');
+
+Route::delete('/deletecurso/{id}',[App\Http\Controllers\cursoController::class, 'deletecurso'])->middleware('auth.admin')->name('deletecurso');
+
+Route::get('/editcurso/{id}',[App\Http\Controllers\cursoController::class, 'editcurso'])->middleware('auth.admin')->name('editcurso');
+
+Route::patch('/editcurso/{id}', [App\Http\Controllers\cursoController::class, 'editcurso'])->middleware('auth.admin')->name('editcurso');
