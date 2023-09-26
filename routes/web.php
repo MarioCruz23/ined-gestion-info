@@ -38,6 +38,8 @@ Route::get('/menupensum',[App\Http\Controllers\HomeController::class, 'menupensu
 
 Route::get('/menugraduandos',[App\Http\Controllers\HomeController::class, 'menugraduandos'])->middleware('auth.admin');
 
+Route::get('/menuinscripcion',[App\Http\Controllers\HomeController::class, 'menuinscripcion'])->middleware('auth.admin');
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])->middleware('auth.admin')
 ->name('savedocente');
 
