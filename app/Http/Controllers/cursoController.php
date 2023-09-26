@@ -27,4 +27,9 @@ class cursoController extends Controller
         $data['cursos'] = curso::paginate(50);
         return view('Curso.listacurso', $data);
     }
+    public function deletecurso($id){
+        curso::destroy($id);
+        return back()->with('cursoEliminado', 'Curso Eliminado');
+    }
+    
 }

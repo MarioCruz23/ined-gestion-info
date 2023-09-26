@@ -5,11 +5,11 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Cursos Registrados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formcurso') }}">Nuevo Curso</a>
-            <!--@if(session('padreEliminado'))
+            @if(session('cursoEliminado'))
             <div class="alert alert-success">
-                {{ session('padreEliminado') }}
+                {{ session('cursoEliminado') }}
             </div>
-            @endif -->
+            @endif
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -27,6 +27,17 @@
                         <td>{{ $curso->nombre }}</td>
                         <td>{{ $curso->area }}</td>
                         <td>{{ $curso->pensum->nombre }}</td>
+                        <td>
+                        <div class="btn-group">
+                            
+                            <form action="{{ route('deletecurso', $curso->id) }}" method="POST" class="Alert-eliminar">
+                                @csrf @method('DELETE')
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso?');" class="btn btn-danger btn-block">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </div>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
