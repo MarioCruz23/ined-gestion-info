@@ -130,3 +130,16 @@ Route::delete('/deletecurso/{id}',[App\Http\Controllers\cursoController::class, 
 Route::get('/editcurso/{id}',[App\Http\Controllers\cursoController::class, 'editcurso'])->middleware('auth.admin')->name('editcurso');
 
 Route::patch('/editcur/{id}', [App\Http\Controllers\cursoController::class, 'editcur'])->middleware('auth.admin')->name('editcur');
+
+Route::get('/forminscripcion',[App\Http\Controllers\inscripcionController::class, 'forminscripcion'])->middleware('auth.admin');
+
+Route::post('/saveinscripcion', [App\Http\Controllers\inscripcionController::class, 'saveinscripcion'])
+->middleware('auth.admin')->name('saveinscripcion');
+
+Route::get('/listarinscripcion', [App\Http\Controllers\inscripcionController::class, 'listarinscripcion'])->middleware('auth.admin');
+
+Route::delete('/deleteinscripcion/{id}',[App\Http\Controllers\inscripcionController::class, 'deleteinscripcion'])->middleware('auth.admin')->name('deleteinscripcion');
+
+Route::get('/editinscripcion/{id}',[App\Http\Controllers\inscripcionController::class, 'editinscripcion'])->middleware('auth.admin')->name('editinscripcion');
+
+Route::patch('/editins/{id}', [App\Http\Controllers\inscripcionController::class, 'editins'])->middleware('auth.admin')->name('editins');
