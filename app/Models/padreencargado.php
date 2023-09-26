@@ -10,7 +10,7 @@ class padreencargado extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'padre_encargado'; // Agrega esta línea
+    protected $table = 'padre_encargado';
 
     public function alumno(){
         return $this->belongsTo(alumno::class, 'alumno_id');

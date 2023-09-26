@@ -39,6 +39,15 @@
                                 <label form="" class="clo-2">Descripción</label>
                                 <textarea class="form-control" type="text" name="descripcion" rows="3"></textarea>
                             </div>
+                                    <div class="form-group">
+                                        <label>Encargado de revisión e impresión</label>
+                                        <select name="docente_id" class="form-control" >
+                                            <option value="">--Seleccione--</option>
+                                            @foreach( $docenteids as $docenteid)
+                                                <option value="{{$docenteid->id}}"> {{$docenteid->nombre}} {{$docenteid->apellido}}  </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                             <div class="row form-group">
                                 <label for="" class="col-2">Imagen o Archivo</label>
                                 <input class="form-control" type="file" name="archivo">

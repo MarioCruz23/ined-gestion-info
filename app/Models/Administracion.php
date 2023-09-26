@@ -16,6 +16,10 @@ class Administracion extends Model
         'fecha',
         'descripcion',
         'archivo',
+        'docente_id',
     ];
     public $timestamps = false;
+    public function docente(){
+        return $this->belongsTo(Docente::class, 'docente_id');
+    }
 }

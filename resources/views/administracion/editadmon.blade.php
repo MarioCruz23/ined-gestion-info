@@ -39,6 +39,19 @@
                                 <label form="" class="clo-2">Descripción:</label>
                                 <textarea class="form-control" type="text" name="descripcion" rows="3">{{ $editadmon->descripcion }}</textarea>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-6 offset-3">
+                                    <div class="form-group">
+                                        <label>Encargado de revisión e impresión</label>
+                                        <select name="docente_id" class="form-control" >
+                                            <option value="{{ $editadmon->docente_id }}">{{ $editadmon->docente->nombre }} {{ $editadmon->docente->apellido }}</option>
+                                            @foreach( $docentes as $docente)
+                                                <option value="{{$docente->id}}"> {{$docente->nombre}} {{$docente->apellido}}  </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row form-group">
                                 <label form="" class="clo-2">Archivo o imagen:</label>
                                 @if($editadmon->archivo)

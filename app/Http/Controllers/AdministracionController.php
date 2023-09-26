@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Administracion;
 use Illuminate\Http\Request;
+use App\Models\Docente;
 
 class AdministracionController extends Controller
 {
     public function registro(){
-        return view('administracion.registroadmon');
+        $docenteids=Docente::all();
+        return view('administracion.registroadmon', compact('docenteids'));
     }
     public function saveadmon(Request $request){
         $validator = $this->validate($request, [
@@ -16,7 +18,8 @@ class AdministracionController extends Controller
             'nombreact' => 'required|string|max:255',
             'fecha' => 'required',
             'descripcion' => 'required|string|max:255',
-            'archivo' => 'file|required'
+            'archivo' => 'file|required',
+            'docente_id'=> 'required'
         ]);
         $admondata = $request->except('_token');
         if ($request->hasFile('archivo')) {
@@ -38,8 +41,8 @@ class AdministracionController extends Controller
     }
     public function editadmon($id){
         $editadmon = Administracion::findOrFail($id);
-        
-        return view('administracion.editadmon', compact('editadmon'));
+        $docentes=Docente::all();
+        return view('administracion.editadmon', compact('editadmon', 'docentes'));
     }     
     public function editad(Request $request, $id){
         $datoadmon = request()->except((['_token','_method']));

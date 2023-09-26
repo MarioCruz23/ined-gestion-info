@@ -17,6 +17,7 @@
                         <th>Nombre</th>
                         <th>Fecha</th>
                         <th>Descripción</th>
+                        <th>Encargado de revisón e impresión</th>
                         <th>Archivo</th>
                         <th>Acciones</th>
                     </tr>
@@ -28,6 +29,7 @@
                         <td>{{ $admon->nombreact }}</td>
                         <td>{{ $admon->fecha }}</td>
                         <td>{{ $admon->descripcion }}</td>
+                        <td>{{ $admon->docente->nombre }} {{ $admon->docente->apellido }}</td>
                         <td>
                             @if($admon->archivo)
                                 <a href="{{ asset('uploads/' . $admon->archivo) }}" target="_blank">Ver archivo</a>
