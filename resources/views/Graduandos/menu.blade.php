@@ -51,7 +51,7 @@
     </div>
     <div class="menu-container">
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/formgraduando') }}">
 
                 <div class="ima">
                     <img class="m"
