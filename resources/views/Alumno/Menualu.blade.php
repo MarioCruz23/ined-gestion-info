@@ -47,7 +47,7 @@
 <body>
     <h1 class="j">Menú de gestión de Estudiantes</h1>
     <div>
-        <a class="btn btn-success mb-4" href="{{ url('/home') }}">Menú Principal</a>
+        <a class="btn btn-success mb-4" href="{{ url('/admin') }}">Menú Principal</a>
     </div>
     <br>
     <div class="menu-container">
@@ -75,7 +75,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/menupadre') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-gratis/familia-padres-ninos-dibujos-animados_18591-52204.jpg?w=740&t=st=1694899846~exp=1694900446~hmac=229ac724a7605be771f18a79a91ba7d89c108c598ab25b1b8d9847d938ec071f">

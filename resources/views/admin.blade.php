@@ -99,7 +99,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/menupensum') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/viejo-libro-abierto-ilustracion-vector-texto-abstracto-estilo-dibujos-animados_543641-1011.jpg?w=2000">
