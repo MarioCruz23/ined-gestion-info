@@ -74,6 +74,24 @@
                 </div>
             </a>
         </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="menu-container">
+        <div class="galeria">
+            <a href="{{ url('/formdocente') }}">
+
+                <div class="ima">
+                    <img class="m"
+                        src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
+                </div>
+                <div class="pie">
+                    <h1 class="jj">Inscripción</h1>
+                </div>
+            </a>
+        </div>
         <div class="galeria">
             <a href="{{ url('/menupadre') }}">
                 <div class="ima">
