@@ -42,4 +42,8 @@ class graduandosController extends Controller
         $graduando['graduandos']=graduandos::paginate(20);
         return view('Graduandos.lista', $graduando);
     }
+    public function deletegraduando($id){
+        graduandos::destroy($id);
+        return back()->with('graduandoEliminado', 'Graduando Eliminado');
+    }
 }

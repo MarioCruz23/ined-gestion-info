@@ -5,11 +5,11 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Graduandos Registrados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formgraduando') }}">Nuevo Graduando</a>
-            <!--@if(session('actividadadmonEliminado'))
+            @if(session('graduandoEliminado'))
             <div class="alert alert-success">
-                {{ session('actividadadmonEliminado') }}
+                {{ session('graduandoEliminado') }}
             </div>
-            @endif-->
+            @endif
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -42,6 +42,16 @@
                             @else
                                 <span>No hay archivo adjunto</span>
                             @endif
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <form action="{{ route('deletegraduando', $graduando->id) }}" method="POST" class="Alert-eliminar">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del graduando?');" class="btn btn-danger btn-block">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
