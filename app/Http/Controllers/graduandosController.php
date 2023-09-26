@@ -38,4 +38,8 @@ class graduandosController extends Controller
         graduandos::insert($graduandodata);
         return back()->with('graduandoGuardado', 'Graduando guardada');
     }
+    public function listargraduando(){
+        $graduando['graduandos']=graduandos::paginate(20);
+        return view('Graduandos.lista', $graduando);
+    }
 }

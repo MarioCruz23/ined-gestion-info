@@ -108,7 +108,7 @@ Route::get('/formgraduando',[App\Http\Controllers\graduandosController::class, '
 Route::post('/savegraduando', [App\Http\Controllers\graduandosController::class, 'savegraduando'])
 ->middleware('auth.admin')->name('savegraduando');
 
-Route::get('/listargraduando', [App\Http\Controllers\graduandosController::class, 'listarpensum'])->middleware('auth.admin');
+Route::get('/listargraduando', [App\Http\Controllers\graduandosController::class, 'listargraduando'])->middleware('auth.admin');
 
 Route::delete('/deletegraduando/{id}',[App\Http\Controllers\graduandosController::class, 'deletegraduando'])->middleware('auth.admin')->name('deletegraduando');
 

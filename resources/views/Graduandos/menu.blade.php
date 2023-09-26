@@ -63,7 +63,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/listargraduando') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
