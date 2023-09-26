@@ -71,7 +71,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/menugraduandos') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-gratis/grupo-personas-que-graduan-ilustrado_23-2148571139.jpg?w=740&t=st=1694844901~exp=1694845501~hmac=d8c4be615c993d48bbae61b1724e173ef22a627aaed6851cbfa16d7d43bf2c1e">
