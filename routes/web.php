@@ -36,6 +36,8 @@ Route::get('/menupadre',[App\Http\Controllers\HomeController::class, 'menupadre'
 
 Route::get('/menupensum',[App\Http\Controllers\HomeController::class, 'menupensum'])->middleware('auth.admin');
 
+Route::get('/menugraduandos',[App\Http\Controllers\HomeController::class, 'menugraduandos'])->middleware('auth.admin');
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])->middleware('auth.admin')
 ->name('savedocente');
 
@@ -100,3 +102,16 @@ Route::delete('/deletepensum/{id}',[App\Http\Controllers\PensumController::class
 Route::get('/editpensum/{id}',[App\Http\Controllers\PensumController::class, 'editpensum'])->middleware('auth.admin')->name('editpensum');
 
 Route::patch('/editpen/{id}', [App\Http\Controllers\PensumController::class, 'editpen'])->middleware('auth.admin')->name('editpen');
+
+Route::get('/formgraduando',[App\Http\Controllers\graduandosController::class, 'registro'])->middleware('auth.admin');
+
+Route::post('/savegraduando', [App\Http\Controllers\graduandosController::class, 'savegraduando'])
+->middleware('auth.admin')->name('savegraduando');
+
+Route::get('/listargraduando', [App\Http\Controllers\graduandosController::class, 'listarpensum'])->middleware('auth.admin');
+
+Route::delete('/deletegraduando/{id}',[App\Http\Controllers\graduandosController::class, 'deletegraduando'])->middleware('auth.admin')->name('deletegraduando');
+
+Route::get('/editgraduando/{id}',[App\Http\Controllers\graduandosController::class, 'editgraduando'])->middleware('auth.admin')->name('editgraduando');
+
+Route::patch('/editgrad/{id}', [App\Http\Controllers\graduandosController::class, 'editgrad'])->middleware('auth.admin')->name('editgrad');
