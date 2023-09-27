@@ -147,3 +147,16 @@ Route::get('/editinscripcion/{id}',[App\Http\Controllers\inscripcionController::
 Route::patch('/editins/{id}', [App\Http\Controllers\inscripcionController::class, 'editins'])->middleware('auth.admin')->name('editins');
 
 Route::get('/get-student-name', [App\Http\Controllers\inscripcionController::class, 'getStudentName'])->name('getStudentName');
+
+Route::get('/formasignacion',[App\Http\Controllers\asignacionController::class, 'formasignacion'])->middleware('auth.admin');
+
+Route::post('/saveasignacion', [App\Http\Controllers\asignacionController::class, 'saveasignacion'])
+->middleware('auth.admin')->name('saveasignacion');
+
+Route::get('/listarasignacion', [App\Http\Controllers\asignacionController::class, 'listarasignacion'])->middleware('auth.admin');
+
+Route::delete('/deleteasignacion/{id}',[App\Http\Controllers\asignacionController::class, 'deleteasignacion'])->middleware('auth.admin')->name('deleteasignacion');
+
+Route::get('/editasignacion/{id}',[App\Http\Controllers\asignacionController::class, 'editasignacion'])->middleware('auth.admin')->name('editasignacion');
+
+Route::patch('/editasig/{id}', [App\Http\Controllers\asignacionController::class, 'editasig'])->middleware('auth.admin')->name('editasig');
