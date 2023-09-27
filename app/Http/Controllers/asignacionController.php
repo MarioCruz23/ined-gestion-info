@@ -34,4 +34,15 @@ class asignacionController extends Controller
         asignacion::destroy($id);
         return back()->with('asignacionEliminado', 'Asignación de curso Eliminado');
     }
+    public function editasignacion($id){
+        $editasignacion = asignacion::findOrFail($id);
+        $docentes = docente::all();
+        $cursos = curso::all();
+        return view('docente.editasignacion', compact('editasignacion', 'docentes', 'cursos'));
+    }
+    public function editasig(Request $request, $id){
+        $datoasignacion = request()->except((['_token','_method']));
+        asignacion::where('id', '=', $id)->update($datoasignacion);
+        return back()->with('asignacionModificado','Dato fue modificado');
+    }
 }

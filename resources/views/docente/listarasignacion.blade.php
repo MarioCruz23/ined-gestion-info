@@ -22,11 +22,14 @@
                 <tbody>
                 @foreach($asignacions as $asignacion)
                     <tr>
-                        <td>{{ $asignacion->docente->nombre }}</td>
+                        <td>{{ $asignacion->docente->nombre }} {{ $asignacion->docente->apellido }}</td>
                         <td>{{ $asignacion->curso->nombre }}</td>
                         <td>{{ $asignacion->grado }}</td>
                         <td>
                         <div class="btn-group">
+                            <a href="{{ route('editasignacion', $asignacion->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
                             <form action="{{ route('deleteasignacion', $asignacion->id) }}" method="POST" class="Alert-eliminar">
                                 @csrf @method('DELETE')
                                 <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso asignado?');" class="btn btn-danger btn-block">
