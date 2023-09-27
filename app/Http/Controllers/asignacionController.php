@@ -29,5 +29,9 @@ class asignacionController extends Controller
         $data['asignacions'] = asignacion::paginate(10);
 
         return view('docente.listarasignacion', $data);
-    }    
+    }   
+    public function deleteasignacion($id){
+        asignacion::destroy($id);
+        return back()->with('asignacionEliminado', 'Asignación de curso Eliminado');
+    }
 }
