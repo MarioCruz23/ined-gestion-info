@@ -14,7 +14,7 @@ class curso extends Model
     public function pensum(){
         return $this->belongsTo(pensum::class, 'pensum_id');
     }
-    public function asignacion(){
-        return $this->hasMany(asignacion::class, 'curso_id');
-    }
+    public function asignaciones(){
+        return $this->hasMany(Asignacion::class, 'curso_id');
+    }    
 }

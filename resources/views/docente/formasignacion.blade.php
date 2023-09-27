@@ -4,13 +4,12 @@
 <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
-                <!-- Mensaje flash
-                @if(session('padreGuardado'))
+                <!-- Mensaje flash -->
+                @if(session('asignacionGuardado'))
                 <div class="alert alert-success">
-                    {{ session('padreGuardado') }}
+                    {{ session('asignacionGuardado') }}
                 </div>
                 @endif
-                validación de errores
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +18,7 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif-->
+                @endif
                 <div class="card">
                     <form action="{{ route('saveasignacion') }}" method="POST">
                         @csrf
@@ -27,28 +26,28 @@
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col-6 offset-3">
-                                    <div class="form-group">
-                                        <label>Docente:</label>
-                                        <select name="docente_id" class="form-control" >
-                                            <option value="">--Seleccione--</option>
-                                            @foreach( $docenteids as $docenteid)
-                                                <option value="{{$docenteid->id}}"> {{$docenteid->nombre}} {{$docenteid->apellido}}  </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Docente:</label>
+                                    <select name="docente_id" class="form-control">
+                                        <option value="">--Seleccione--</option>
+                                        @foreach($docenteids as $docenteid)
+                                            <option value="{{$docenteid->id}}">{{$docenteid->nombre}} {{$docenteid->apellido}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-6 offset-3">
-                                    <div class="form-group">
-                                        <label>Curso:</label>
-                                        <select name="curso_id" class="form-control" >
-                                            <option value="">--Seleccione--</option>
-                                            @foreach( $cursoids as $cursoid)
-                                                <option value="{{$cursoid->id}}"> {{$cursoid->nombre}} </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Curso:</label>
+                                    <select name="curso_id" class="form-control">
+                                        <option value="">--Seleccione--</option>
+                                        @foreach($cursoids as $cursoid)
+                                            <option value="{{$cursoid->id}}">{{$cursoid->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 </div>
                             </div>
                             <div class="row form-group">

@@ -12,7 +12,7 @@ class Docente extends Model
     public function admon(){
         return $this->hasMany(Administración::class, 'docente_id');
     }
-    public function asignacion(){
-        return $this->hasMany(asignacion::class, 'docente_id');
-    }
+    public function asignaciones(){
+        return $this->hasMany(Asignacion::class, 'docente_id');
+    }    
 }
