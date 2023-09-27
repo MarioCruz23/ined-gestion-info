@@ -55,5 +55,37 @@ class inscripcionController extends Controller
     public function deleteinscripcion($id){
         inscripcion::destroy($id);
     return back()->with('inscripcionEliminado', 'Estudiante inscrito Eliminado');
-}
+    }
+    public function editinscripcion($id){
+        $editinscripcion = inscripcion::findOrFail($id);
+        $alumnos = alumno::all();
+        $nombreCompleto = $editinscripcion->alumno->nombre . ' ' . $editinscripcion->alumno->apellido;        
+        return view('Alumno.editinscripcion', compact('editinscripcion', 'alumnos', 'nombreCompleto'));
+    }    
+    public function editins(Request $request, $id){
+        $request->validate([
+            'codigoes' => 'required', // Código del nuevo estudiante
+            'nacionalidad' => 'required',
+            'grado' => 'required',
+            'anio' => 'required',
+        ]);
+        
+        // Obtén el ID del nuevo estudiante basado en el código ingresado
+        $nuevoCodigo = $request->input('codigoes');
+        $nuevoEstudiante = Alumno::where('codigoes', $nuevoCodigo)->first();
+    
+        if (!$nuevoEstudiante) {
+            return back()->with('error', 'Nuevo estudiante no encontrado');
+        }
+        
+        // Actualiza la inscripción con el nuevo ID del estudiante
+        $datoinscripcion = $request->only(['nacionalidad', 'grado', 'anio']);
+        $datoinscripcion['alumno_id'] = $nuevoEstudiante->id;
+        
+        inscripcion::where('id', '=', $id)->update($datoinscripcion);
+        
+        return back()->with('inscripcionModificado','Dato fue modificado');
+    }
+    
+    
 }

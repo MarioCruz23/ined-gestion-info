@@ -35,7 +35,9 @@
                         <td>{{ $inscripcion->alumno->cui }}</td>
                         <td>
                         <div class="btn-group">
-                            
+                            <a href="{{ route('editinscripcion', $inscripcion->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
                             <form action="{{ route('deleteinscripcion', $inscripcion->id) }}" method="POST" class="Alert-eliminar">
                                 @csrf @method('DELETE')
                                 <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del Estudiante inscrito?');" class="btn btn-danger btn-block">

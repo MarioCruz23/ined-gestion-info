@@ -4,15 +4,13 @@
     $(document).ready(function() {
     $('#codigoes').on('input', function() {
         var codigoes = $(this).val();
-        console.log('Código del estudiante:', codigoes); // Esto muestra el código en la consola para depuración.
-
-        // Realizar la solicitud AJAX
+        console.log('Código del estudiante:', codigoes);
         $.ajax({
             url: '{{ route('getStudentName') }}',
             type: 'GET',
             data: {
                 codigoes: codigoes,
-                _token: '{{ csrf_token() }}' // Agregar el token CSRF
+                _token: '{{ csrf_token() }}'
             },
             success: function(response) {
                 if (response.success) {
@@ -26,7 +24,6 @@
         });
     });
 });
-
 </script>
 <div class="container mt-5">
 <div class="container mt-5">
