@@ -81,7 +81,7 @@
     <br>
     <div class="menu-container">
         <div class="galeria">
-            <a href="">
+            <a href="{{ url('/menuinscripcion') }}">
 
                 <div class="ima">
                     <img class="m"
