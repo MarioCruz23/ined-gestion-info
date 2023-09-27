@@ -40,6 +40,8 @@ Route::get('/menugraduandos',[App\Http\Controllers\HomeController::class, 'menug
 
 Route::get('/menuinscripcion',[App\Http\Controllers\HomeController::class, 'menuinscripcion'])->middleware('auth.admin');
 
+Route::get('/menuasignación',[App\Http\Controllers\HomeController::class, 'menuasignación'])->middleware('auth.admin');
+
 Route::post('/savedocente', [App\Http\Controllers\DocenteController::class, 'savedocente'])->middleware('auth.admin')
 ->name('savedocente');
 

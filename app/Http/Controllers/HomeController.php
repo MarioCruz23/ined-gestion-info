@@ -52,4 +52,7 @@ class HomeController extends Controller
     public function menuinscripcion(){
         return view('Alumno.menuinscripcion');
     }
+    public function menuasignación(){
+        return view('docente.menuasignacion');
+    }
 }

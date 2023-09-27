@@ -51,7 +51,7 @@
     </div>
     <div class="menu-container">
         <div class="galeria">
-            <a href="{{ url('/formdocente') }}">
+            <a href="{{ url('/') }}">
 
                 <div class="ima">
                     <img class="m"
@@ -63,24 +63,13 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="{{ url('/listardocente') }}">
+            <a href="{{ url('/') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Reporte</h1>
-                </div>
-            </a>
-        </div>
-        <div class="galeria">
-            <a href="{{ url('/menuasignación') }}">
-                <div class="ima">
-                    <img class="m"
-                        src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
-                </div>
-                <div class="pie">
-                    <h1 class="jj">Asignar curso</h1>
                 </div>
             </a>
         </div>
