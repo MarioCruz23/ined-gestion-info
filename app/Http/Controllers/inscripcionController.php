@@ -47,4 +47,9 @@ class inscripcionController extends Controller
         }
         return back()->with('error', 'Estudiante no encontrado');
     }    
+    public function listarinscripcion(){
+        $data['inscripcions'] = inscripcion::paginate(30);
+
+        return view('Alumno.listainscripcion', $data);
+    }
 }
