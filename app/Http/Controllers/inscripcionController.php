@@ -52,4 +52,8 @@ class inscripcionController extends Controller
 
         return view('Alumno.listainscripcion', $data);
     }
+    public function deleteinscripcion($id){
+        inscripcion::destroy($id);
+    return back()->with('inscripcionEliminado', 'Estudiante inscrito Eliminado');
+}
 }
