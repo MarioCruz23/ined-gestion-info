@@ -233,6 +233,9 @@ return [
         'archivopensum' => [
             'required' => 'La fecha es requerido'
         ],
+        'alumno_id' => [
+            'required' => 'El campo alumno_id es requerido'
+        ],
     ],
 
     /*

@@ -143,3 +143,5 @@ Route::delete('/deleteinscripcion/{id}',[App\Http\Controllers\inscripcionControl
 Route::get('/editinscripcion/{id}',[App\Http\Controllers\inscripcionController::class, 'editinscripcion'])->middleware('auth.admin')->name('editinscripcion');
 
 Route::patch('/editins/{id}', [App\Http\Controllers\inscripcionController::class, 'editins'])->middleware('auth.admin')->name('editins');
+
+Route::get('/get-student-name', [App\Http\Controllers\inscripcionController::class, 'getStudentName'])->name('getStudentName');

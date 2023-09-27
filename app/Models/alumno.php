@@ -14,4 +14,7 @@ class alumno extends Model
     public function padres(){
         return $this->hasMany(padreencargado::class, 'alumno_id');
     }
+    public function inscripcion(){
+        return $this->hasMany(inscripcion::class, 'alumno_id');
+    }
 }

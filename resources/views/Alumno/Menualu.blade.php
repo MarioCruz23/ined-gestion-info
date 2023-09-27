@@ -52,7 +52,7 @@
     <br>
     <div class="menu-container">
         <div class="galeria">
-            <a href="{{ url('/formdocente') }}">
+            <a href="{{ url('/formalumno') }}">
 
                 <div class="ima">
                     <img class="m"
@@ -64,7 +64,7 @@
             </a>
         </div>
         <div class="galeria">
-            <a href="{{ url('/listardocente') }}">
+            <a href="{{ url('/listaralumno') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
@@ -81,7 +81,7 @@
     <br>
     <div class="menu-container">
         <div class="galeria">
-            <a href="{{ url('/formdocente') }}">
+            <a href="">
 
                 <div class="ima">
                     <img class="m"
