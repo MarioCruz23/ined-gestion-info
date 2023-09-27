@@ -24,5 +24,10 @@ class asignacionController extends Controller
         $asignaciondata = request()->except('_token');
         asignacion::insert($asignaciondata);
         return back()->with('asignacionGuardado', 'Asignación de curso a docente Guardado');
+    }
+    public function listarasignacion(){
+        $data['asignacions'] = asignacion::paginate(10);
+
+        return view('docente.listarasignacion', $data);
     }    
 }
