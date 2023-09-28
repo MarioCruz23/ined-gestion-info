@@ -4,12 +4,24 @@
     <div class="row justify_content-center">
         <div class="col-md-10">
             <h2 class="text-center mb-5">Alumnos Registrados</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formalumno') }}">Nuevo Docente</a>
+            <a class="btn btn-success mb-4" href="{{ url('/formalumno') }}">Nuevo Alumno</a>
             @if(session('alumnoEliminado'))
             <div class="alert alert-success">
                 {{ session('alumnoEliminado') }}
             </div>
             @endif
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <form action="{{ route('searchAlumno') }}" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>

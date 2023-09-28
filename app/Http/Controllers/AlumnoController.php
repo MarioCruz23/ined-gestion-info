@@ -49,4 +49,15 @@ class AlumnoController extends Controller
         alumno::where('id', '=', $id)->update($datoalumno);
         return back()->with('alumnoModificado','Dato fue modificado');
     }
+    public function searchAlumno(Request $request) {
+        $search = $request->input('search');
+        $data['alumnos'] = Alumno::where('codigoes', 'like', '%' . $search . '%')
+            ->orWhere('nombre', 'like', '%' . $search . '%')
+            ->orWhere('apellido', 'like', '%' . $search . '%')
+            ->orWhere('telefono', 'like', '%' . $search . '%')
+            ->orWhere('correo', 'like', '%' . $search . '%')
+            ->orWhere('cui', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('Alumno.lista', $data);
+    }    
 }
