@@ -121,5 +121,20 @@
             </a>
         </div>
     </div>
+    <br><br><br><br>
+    @can('update', Auth::user())
+    <div class="menu-container">
+        <div class="galeria">
+            <a href="{{ url('/menuasignaciones') }}">
+                <div class="ima">
+                    <img class="m" src="https://img.freepik.com/vector-premium/gerente-administrador-hombre-hotel_51635-7414.jpg?w=740">
+                </div>
+                <div class="pie">
+                    <h1 class="jj">Asignaciones</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+    @endcan
 </body>
 @endsection

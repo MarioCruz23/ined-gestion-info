@@ -45,31 +45,31 @@
     }
 </style>
 <body>
-    <h1 class="j">Menú de gestión de Docentes</h1>
+    <h1 class="j">Menú de gestión de Cursos</h1>
     <div>
         <a class="btn btn-success mb-4" href="{{ url('/admin') }}">Menú Principal</a>
     </div>
     <div class="menu-container">
         <div class="galeria">
-            <a href="{{ url('/formdocente') }}">
+            <a href="{{ url('/menuasignación') }}">
 
                 <div class="ima">
                     <img class="m"
                         src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
                 </div>
                 <div class="pie">
-                    <h1 class="jj">Registro</h1>
+                    <h1 class="jj">Asignación de cursos</h1>
                 </div>
             </a>
         </div>
         <div class="galeria">
-            <a href="{{ url('/listardocente') }}">
+            <a href="{{ url('/listarol') }}">
                 <div class="ima">
                     <img class="m"
                         src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
                 </div>
                 <div class="pie">
-                    <h1 class="jj">Reporte</h1>
+                    <h1 class="jj">Asignación de roles de usuario</h1>
                 </div>
             </a>
         </div>
