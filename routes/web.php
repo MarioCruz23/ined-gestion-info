@@ -188,3 +188,5 @@ Route::patch('/editrol/{id}', [App\Http\Controllers\AdminController::class, 'edi
 
 //Ritas de busque de informacion
 Route::get('/searchAdmon', [App\Http\Controllers\AdministracionController::class, 'searchAdmon'])->middleware('auth.admin')->name('searchAdmon');
+
+Route::get('/searchUser', [App\Http\Controllers\AdminController::class, 'searchUser'])->name('searchUser');

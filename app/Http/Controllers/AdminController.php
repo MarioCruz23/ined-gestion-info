@@ -27,4 +27,12 @@ class AdminController extends Controller
         User::where('id', '=', $id)->update($datorol);
         return back()->with('usuarioModificado','Usuario fue modificado');
     }
+    public function searchUser(Request $request) {
+        $search = $request->input('search');
+        $rol['rols'] = User::where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->orWhere('role', 'LIKE', '%' . $search . '%')
+            ->paginate(12);
+        return view('roles.listarol', $rol);
+    }    
 }

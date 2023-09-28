@@ -10,6 +10,18 @@
                 {{ session('usuarioEliminado') }}
             </div>
             @endif
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <form action="{{ route('searchUser') }}" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
