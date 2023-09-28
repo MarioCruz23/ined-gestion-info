@@ -56,4 +56,13 @@ class graduandosController extends Controller
         graduandos::where('id', '=', $id)->update($datograduando);
         return back()->with('graduandoModificado',' dato del Graduando fue modificado');
     }
+    public function searchGraduando(Request $request) {
+        $search = $request->input('search');
+        $graduandos['graduandos'] = graduandos::where('codigoalu', 'like', '%' . $search . '%')
+            ->orWhere('nombre', 'like', '%' . $search . '%')
+            ->orWhere('apellido', 'like', '%' . $search . '%')
+            ->orWhere('anio', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('Graduandos.lista', $graduandos);
+    }    
 }

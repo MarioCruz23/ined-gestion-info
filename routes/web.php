@@ -201,3 +201,4 @@ Route::get('/searchAlumno', [App\Http\Controllers\AlumnoController::class, 'sear
 
 Route::get('/searchDocente', [App\Http\Controllers\DocenteController::class, 'searchDocente'])->middleware('auth.admin')->name('searchDocente');
 
+Route::get('/searchGraduando', [App\Http\Controllers\graduandosController::class, 'searchGraduando'])->middleware('auth.admin')->name('searchGraduando');
