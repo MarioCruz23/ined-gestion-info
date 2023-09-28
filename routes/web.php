@@ -194,3 +194,5 @@ Route::get('/searchUser', [App\Http\Controllers\AdminController::class, 'searchU
 Route::get('/searchAsignacion', [App\Http\Controllers\asignacionController::class, 'searchAsignacion'])->middleware('can:update,App\User')->name('searchAsignacion');
 
 Route::get('/searchInscripcion', [App\Http\Controllers\inscripcionController::class, 'searchInscripcion'])->middleware('auth.admin')->name('searchInscripcion');
+
+Route::get('/searchPadre', [App\Http\Controllers\PadreController::class, 'searchPadre'])->middleware('auth.admin')->name('searchPadre');

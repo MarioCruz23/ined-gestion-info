@@ -43,4 +43,17 @@ class PadreController extends Controller
         padreencargado::where('id', '=', $id)->update($datoencargado);
         return back()->with('padreModificado','Dato fue modificado');
     }
+    public function searchPadre(Request $request) {
+        $search = $request->input('search');
+        $data['padre_encargados'] = PadreEncargado::where('nombre', 'like', '%' . $search . '%')
+            ->orWhere('apellido', 'like', '%' . $search . '%')
+            ->orWhere('telefono', 'like', '%' . $search . '%')
+            ->orWhere('direccion', 'like', '%' . $search . '%')
+            ->orWhereHas('alumno', function ($query) use ($search) {
+                $query->where('nombre', 'like', '%' . $search . '%')
+                      ->orWhere('apellido', 'like', '%' . $search . '%');
+            })
+            ->paginate(10);
+        return view('Alumno.listapadre', $data);
+    }    
 }
