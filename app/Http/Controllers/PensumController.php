@@ -42,4 +42,9 @@ class PensumController extends Controller
         pensum::where('id', '=', $id)->update($datopensum);
         return back()->with('pensumModificado','Dato del pensum fue modificado');
     }
+    public function searchPensum(Request $request) {
+        $search = $request->input('search');
+        $pensum['pensums'] = pensum::where('nombre', 'like', '%' . $search . '%')->paginate(10);
+        return view('pensum.listapensum', $pensum);
+    }    
 }
