@@ -45,4 +45,17 @@ class asignacionController extends Controller
         asignacion::where('id', '=', $id)->update($datoasignacion);
         return back()->with('asignacionModificado','Dato fue modificado');
     }
+    public function searchAsignacion(Request $request) {
+        $search = $request->input('search');
+        $data['asignacions'] = Asignacion::whereHas('docente', function ($query) use ($search) {
+            $query->where('nombre', 'like', '%' . $search . '%')
+                  ->orWhere('apellido', 'like', '%' . $search . '%');
+        })
+        ->orWhereHas('curso', function ($query) use ($search) {
+            $query->where('nombre', 'like', '%' . $search . '%');
+        })
+        ->orWhere('grado', 'like', '%' . $search . '%')
+        ->paginate(10);
+        return view('docente.listarasignacion', $data);
+    }    
 }
