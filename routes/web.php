@@ -198,3 +198,6 @@ Route::get('/searchInscripcion', [App\Http\Controllers\inscripcionController::cl
 Route::get('/searchPadre', [App\Http\Controllers\PadreController::class, 'searchPadre'])->middleware('auth.admin')->name('searchPadre');
 
 Route::get('/searchAlumno', [App\Http\Controllers\AlumnoController::class, 'searchAlumno'])->middleware('auth.admin')->name('searchAlumno');
+
+Route::get('/searchDocente', [App\Http\Controllers\DocenteController::class, 'searchDocente'])->middleware('auth.admin')->name('searchDocente');
+

@@ -43,4 +43,13 @@ class DocenteController extends Controller{
         Docente::where('id', '=', $id)->update($datodocente);
         return back()->with('docenteModificado','Dato fue modificado');
     }
+    public function searchDocente(Request $request) {
+        $search = $request->input('search');
+        $data['docentes'] = Docente::where('nombre', 'like', '%' . $search . '%')
+            ->orWhere('apellido', 'like', '%' . $search . '%')
+            ->orWhere('telefono', 'like', '%' . $search . '%')
+            ->orWhere('correo', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('docente.lista', $data);
+    }    
 }    
