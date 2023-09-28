@@ -79,4 +79,14 @@ class inscripcionController extends Controller
         inscripcion::where('id', '=', $id)->update($datoinscripcion);
         return back()->with('inscripcionModificado','Dato fue modificado');
     }    
+    public function searchInscripcion(Request $request) {
+        $search = $request->input('search');
+        $data['inscripcions'] = Inscripcion::whereHas('alumno', function ($query) use ($search) {
+            $query->where('nombre', 'like', '%' . $search . '%')
+                  ->orWhere('apellido', 'like', '%' . $search . '%')
+                  ->orWhere('codigoes', 'like', '%' . $search . '%');
+        })->paginate(30);
+        return view('Alumno.listainscripcion', $data);
+    }
+    
 }
