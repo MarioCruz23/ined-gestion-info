@@ -49,4 +49,11 @@ class AdministracionController extends Controller
         Administracion::where('id', '=', $id)->update($datoadmon);
         return back()->with('actividadAdministrativoModificado','Dato administrativo fue modificado');
     }
+    public function searchAdmon(Request $request) {
+        $searchTerm = $request->input('search');
+        $admons = Administracion::where('nombreact', 'like', '%' . $searchTerm . '%')
+            ->orWhere('descripcion', 'like', '%' . $searchTerm . '%')
+            ->paginate(10);
+        return view('administracion.listaadmon', compact('admons'));
+    }    
 }

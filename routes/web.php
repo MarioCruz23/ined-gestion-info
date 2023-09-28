@@ -185,3 +185,6 @@ Route::delete('/deleterol/{id}',[App\Http\Controllers\AdminController::class, 'd
 Route::get('/editroles/{id}',[App\Http\Controllers\AdminController::class, 'editroles'])->middleware('can:update,App\User')->name('editroles');
 
 Route::patch('/editrol/{id}', [App\Http\Controllers\AdminController::class, 'editrol'])->middleware('can:update,App\User')->name('editrol');
+
+//Ritas de busque de informacion
+Route::get('/searchAdmon', [App\Http\Controllers\AdministracionController::class, 'searchAdmon'])->middleware('auth.admin')->name('searchAdmon');
