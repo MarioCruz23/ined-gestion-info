@@ -41,4 +41,13 @@ class cursoController extends Controller
         curso::where('id', '=', $id)->update($datocurso);
         return back()->with('cursoModificado','Curso modificado');
     }
+    public function searchCurso(Request $request) {
+        $search = $request->input('search');
+        $cursos = curso::where('codigocurso', 'like', '%' . $search . '%')
+        ->orWhere('nombre', 'like', '%' . $search . '%')
+        ->orWhere('area', 'like', '%' . $search . '%')
+        ->orWhere('pensum_id', 'like', '%' . $search . '%')
+        ->paginate(10);
+        return view('Curso.listacurso', compact('cursos'));
+    }    
 }

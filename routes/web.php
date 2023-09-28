@@ -186,7 +186,7 @@ Route::get('/editroles/{id}',[App\Http\Controllers\AdminController::class, 'edit
 
 Route::patch('/editrol/{id}', [App\Http\Controllers\AdminController::class, 'editrol'])->middleware('can:update,App\User')->name('editrol');
 
-//Ritas de busque de informacion
+//Rutas de busqueda de informacion
 Route::get('/searchAdmon', [App\Http\Controllers\AdministracionController::class, 'searchAdmon'])->middleware('auth.admin')->name('searchAdmon');
 
 Route::get('/searchUser', [App\Http\Controllers\AdminController::class, 'searchUser'])->middleware('can:update,App\User')->name('searchUser');
@@ -204,3 +204,5 @@ Route::get('/searchDocente', [App\Http\Controllers\DocenteController::class, 'se
 Route::get('/searchGraduando', [App\Http\Controllers\graduandosController::class, 'searchGraduando'])->middleware('auth.admin')->name('searchGraduando');
 
 Route::get('/searchPensum', [App\Http\Controllers\PensumController::class, 'searchPensum'])->middleware('auth.admin')->name('searchPensum');
+
+Route::get('/searchCurso', [App\Http\Controllers\cursoController::class, 'searchCurso'])->middleware('auth.admin')->name('searchCurso');
