@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Actividades administrativas Registradas</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formadmon') }}">Nueva Actividad</a>
+            <a href="{{ route('exportAdmonToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('actividadadmonEliminado'))
             <div class="alert alert-success">
                 {{ session('actividadadmonEliminado') }}

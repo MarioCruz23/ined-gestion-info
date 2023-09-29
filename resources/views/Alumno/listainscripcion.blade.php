@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Estudiantes Inscritos</h2>
             <a class="btn btn-success mb-4" href="{{ url('/forminscripcion') }}">Nueva Inscripción</a>
+            <a href="{{ route('exportInscripcionToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('inscripcionEliminado'))
             <div class="alert alert-success">
                 {{ session('inscripcionEliminado') }}

@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Docentes matriculados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formdocente') }}">Nuevo Docente</a>
+            <a href="{{ route('exportDocenteToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('docenteEliminado'))
             <div class="alert alert-success">
                 {{ session('docenteEliminado') }}

@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Lista de cursos asignados a docentes</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
+            <a href="{{ route('exportAsignacionToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('asignacionEliminado'))
             <div class="alert alert-success">
                 {{ session('asignacionEliminado') }}

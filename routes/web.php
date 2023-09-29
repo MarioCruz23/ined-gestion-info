@@ -206,3 +206,20 @@ Route::get('/searchGraduando', [App\Http\Controllers\graduandosController::class
 Route::get('/searchPensum', [App\Http\Controllers\PensumController::class, 'searchPensum'])->middleware('auth.admin')->name('searchPensum');
 
 Route::get('/searchCurso', [App\Http\Controllers\cursoController::class, 'searchCurso'])->middleware('auth.admin')->name('searchCurso');
+
+//rutas para exportar en excel
+Route::get('/export-to-excel', [App\Http\Controllers\ExcelExportController::class, 'exportToExcel'])->middleware('auth.admin')->name('exportToExcel');
+
+Route::get('/exportAsignacionToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportAsignacionToExcel'])->middleware('can:update,App\User')->name('exportAsignacionToExcel');
+
+Route::get('/exportDocenteToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportDocenteToExcel'])->middleware('auth.admin')->name('exportDocenteToExcel');
+
+Route::get('/exportAlumnoToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportAlumnoToExcel'])->middleware('auth.admin')->name('exportAlumnoToExcel');
+
+Route::get('/exportInscripcionToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportInscripcionToExcel'])->middleware('auth.admin')->name('exportInscripcionToExcel');
+
+Route::get('/exportPadreToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportPadreToExcel'])->middleware('auth.admin')->name('exportPadreToExcel');
+
+Route::get('/exportGraduandoToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportGraduandoToExcel'])->middleware('auth.admin')->name('exportGraduandoToExcel');
+
+Route::get('/exportAdmonToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportAdmonToExcel'])->middleware('auth.admin')->name('exportAdmonToExcel');

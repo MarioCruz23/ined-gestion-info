@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Padres o Encargados Registrados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formpadre') }}">Nuevo</a>
+            <a href="{{ route('exportPadreToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('padreEliminado'))
             <div class="alert alert-success">
                 {{ session('padreEliminado') }}

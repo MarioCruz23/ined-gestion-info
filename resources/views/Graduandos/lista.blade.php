@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Graduandos Registrados</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formgraduando') }}">Nuevo Graduando</a>
+            <a href="{{ route('exportGraduandoToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('graduandoEliminado'))
             <div class="alert alert-success">
                 {{ session('graduandoEliminado') }}
