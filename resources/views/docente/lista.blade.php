@@ -1,17 +1,24 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+<div class="container mt-3">
     <div class="row justify_content-center">
-        <div class="col-md-10">
-            <h2 class="text-center mb-5">Docentes matriculados</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formdocente') }}">Nuevo Docente</a>
-            <a href="{{ route('exportDocenteToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
+        <div class="col-md-12">
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Docentes matriculados</strong></h2>
             @if(session('docenteEliminado'))
             <div class="alert alert-success">
                 {{ session('docenteEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/formdocente') }}">Nuevo Docente</a>
+                    <a href="{{ route('exportDocenteToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchDocente') }}" method="GET">
                         <div class="input-group">
@@ -50,12 +57,12 @@
                         <td>{{ $docente->genero }}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('editdocente', $docente->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <a href="{{ route('editdocente', $docente->id) }}" class="btn btn-primary">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('delete', $docente->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de este docente?');" class="btn btn-danger btn-block">
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de este docente?');" class="btn btn-danger">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

@@ -1,17 +1,24 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+<div class="container mt-3">
     <div class="row justify_content-center">
-        <div class="col-md-10">
-            <h2 class="text-center mb-5">Lista de cursos asignados a docentes</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
-            <a href="{{ route('exportAsignacionToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
+        <div class="col-md-12">
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Lista de cursos asignados a docentes</strong></h2>
             @if(session('asignacionEliminado'))
             <div class="alert alert-success">
                 {{ session('asignacionEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
+                    <a href="{{ route('exportAsignacionToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchAsignacion') }}" method="GET">
                         <div class="input-group">

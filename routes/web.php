@@ -216,7 +216,7 @@ Route::get('/exportDocenteToExcel', [App\Http\Controllers\ExcelExportController:
 
 Route::get('/exportAlumnoToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportAlumnoToExcel'])->middleware('auth.admin')->name('exportAlumnoToExcel');
 
-Route::get('/exportInscripcionToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportInscripcionToExcel'])->middleware('auth.admin')->name('exportInscripcionToExcel');
+Route::match(['get', 'post'], '/exportInscripcionToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportInscripcionToExcel'])->middleware('auth.admin')->name('exportInscripcionToExcel');
 
 Route::get('/exportPadreToExcel', [App\Http\Controllers\ExcelExportController::class, 'exportPadreToExcel'])->middleware('auth.admin')->name('exportPadreToExcel');
 

@@ -45,9 +45,9 @@
     }
 </style>
 <body>
-    <h1 class="j">Menú de gestión de Cursos</h1>
-    <div>
-        <a class="btn btn-success mb-4" href="{{ url('/admin') }}">Menú Principal</a>
+    <h1 class="j">Menú de Asignaciones</h1>
+    <div class="d-grid gap-2 col-5 mx-auto">
+        <a class="btn btn-outline-info" href="{{ url('/admin') }}">Menú Principal</a>
     </div>
     <div class="menu-container">
         <div class="galeria">

@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    .download-link {
+        text-decoration: none;
+    }
+
+    .download-icon {
+        margin-left: 5px; /* Espacio entre el texto y el ícono */
+        color: #007bff; /* Color del ícono de descarga */
+    }
+</style>
 <div class="container mt-5">
 <div class="container mt-5">
         <div class="row justify-content-center"> 
@@ -44,23 +54,27 @@
                                 <input class="form-control" type="file" name="titulo">
                             </div>
                             @if(isset($graduandodata['titulo']))
-                                <div class="row form-group">
-                                    <label class="col-2">Nombre del archivo:</label>
-                                    <span>{{ basename($graduandodata['titulo']) }}</span>
-                                </div>
-                            @endif
+                            <div class="row form-group">
+                                <label class="col-2">Nombre del archivo:</label>
+                                <span>{{ basename($graduandodata['titulo']) }}</span>
+                                <a href="{{ asset($graduandodata['titulo']) }}" download class="download-link">
+                                    Descargar <img src="https://static.vecteezy.com/system/resources/previews/018/938/905/non_2x/upload-or-add-new-document-file-button-concept-illustration-flat-design-eps10-simple-and-modern-graphic-element-for-landing-page-empty-state-ui-infographic-button-icon-vector.jpg" alt="Descargar" class="download-icon">
+                                </a>
                             </div>
+                            @endif
                             <div class="row form-group">
                                 <label for="" class="col-2">Constancia:</label>
                                 <input class="form-control" type="file" name="constancia">
                             </div>
                             @if(isset($graduandodata['constancia']))
-                                <div class="row form-group">
-                                    <label class="col-2">Nombre del archivo:</label>
-                                    <span>{{ basename($graduandodata['constancia']) }}</span>
-                                </div>
-                            @endif
+                            <div class="row form-group">
+                                <label class="col-2">Nombre del archivo:</label>
+                                <span>{{ basename($graduandodata['constancia']) }}</span>
+                                <a href="{{ asset($graduandodata['constancia']) }}" download class="download-link">
+                                    Descargar <img src="https://cdn.vectorstock.com/i/1000x1000/12/36/server-upload-web-hosting-icon-image-vector-17691236.webp" alt="Descargar" class="download-icon">
+                                </a>
                             </div>
+                            @endif
                             <div class="row mb-3">
                                 <div class="col-6 offset-3">
                                     <div class="form-group">

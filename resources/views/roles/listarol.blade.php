@@ -2,15 +2,17 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify_content-center">
-        <div class="col-md-10">
-            <h2 class="text-center mb-5">Usuarios Registrados</h2>
-            <a class="btn btn-success mb-4" href="">Menu Principal</a>
+        <div class="col-md-10-center">
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Usuarios Registrados</strong></h2>
             @if(session('usuarioEliminado'))
             <div class="alert alert-success">
                 {{ session('usuarioEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/menuasignaciones') }}">Menu Asignaciones</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchUser') }}" method="GET">
                         <div class="input-group">

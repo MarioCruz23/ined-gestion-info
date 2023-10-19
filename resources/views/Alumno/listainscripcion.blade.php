@@ -5,7 +5,18 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Estudiantes Inscritos</h2>
             <a class="btn btn-success mb-4" href="{{ url('/forminscripcion') }}">Nueva Inscripción</a>
-            <a href="{{ route('exportInscripcionToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
+            <form action="{{ route('exportInscripcionToExcel') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="grado">Filtrar por Grado:</label>
+                    <select name="grado" class="form-control">
+                        <option value="4to. Magisterio">4to. Magisterio</option>
+                        <option value="5to. Magisterio">5to. Magisterio</option>
+                        <option value="6to. Magisterio">6to. Magisterio</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Exportar a Excel</button>
+            </form>
             @if(session('inscripcionEliminado'))
             <div class="alert alert-success">
                 {{ session('inscripcionEliminado') }}

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <style>
     .j {
@@ -28,20 +27,42 @@
     }
     .galeria {
         margin: 10px;
-        width: 280px; 
-        height: 280px; 
-        box-shadow: 0 4px 8px 0 lightblue, 0 10px 20px rgb(0, 0, 0, 0.30);
+        width: 280px;
+        height: 280px;
+        box-shadow: 0 4px 8px 0 lightblue, 0 10px 20px rgba(0, 0, 0, 0.30);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
-    .m {
+    .galeria a {
+        display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+    }
+    .m {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
     }
     .pie {
-        text-align: center;
         text-shadow: 2px 2px 2px purple;
         padding: 2px;
-        
+    }
+
+    @media (max-width: 767px) {
+        .galeria {
+            width: 100%;
+            max-width: 120px;
+            height: 120px;
+        }
+        .jj {
+            font-size: 14px;
+        }
+        .jjj {
+            font-size: 14px;
+        }
     }
 </style>
 <body>

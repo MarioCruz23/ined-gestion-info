@@ -166,8 +166,9 @@ class ExcelExportController extends Controller{
         header('Cache-Control: max-age=0');
         $writer->save('php://output');
     }
-    public function exportInscripcionToExcel(){
-        $inscripcions = inscripcion::all();
+    public function exportInscripcionToExcel(Request $request){
+        $grado = $request->input('grado');
+        $inscripcions = Inscripcion::where('grado', $grado)->get();
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->getColumnDimension('A')->setWidth(20);
