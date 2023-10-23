@@ -33,12 +33,20 @@
     }
 </style>
 <script>
-    document.getElementById("telefono").addEventListener("input", function () {
-        const telefonoInput = this.value.trim(); 
-        if (telefonoInput.length > 8) {
-            this.value = telefonoInput.slice(0, 8);
+    function calcularEdad() {
+        const fechaNacimiento = new Date(document.querySelector('input[name="fechanac"]').value);
+        const fechaActual = new Date();
+        const diferencia = fechaActual - fechaNacimiento;
+        const edad = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+        document.querySelector('input[name="edad"]').value = edad;
+    }
+    function validarTelefono(input) {
+        const valor = input.value.trim();
+        const regex = /^[0-9]{1,8}$/; 
+        if (!regex.test(valor)) {
+            input.value = valor.slice(0, 8);
         }
-    });
+    }
 </script>
     <div class="container">
         <div class="row justify-content-center"> 
@@ -74,25 +82,25 @@
                                 </div>
                                 <div class="col-md-6"> 
                                     <label for="apellido" class="col-4 font-weight-bold">Apellido:</label>
-                                    <input placeholder="Carrasco Torres" type="text" name="apellido" class="form-control col-md-8">
+                                    <input placeholder="Ejemplo: Carrasco Torres" type="text" name="apellido" class="form-control col-md-8">
                                 </div>
                             </div>
                             <br>
                             <div class="row form-group">
-                            <div class="col-md-6"> 
+                                <div class="col-md-6"> 
                                     <label for="fechanac" class="col-8">Fecha de nacimiento:</label>
-                                    <input type="date" name="fechanac" class="form-control col-md-8" min="1965-01-01" max="2004-12-31">
+                                    <input type="date" name="fechanac" class="form-control col-md-8" min="1965-01-01" max="2004-12-31" onchange="calcularEdad()">
                                 </div>
                                 <div class="col-md-6"> 
                                     <label for="edad" class="col-4">Edad:</label>
-                                    <input placeholder="ejemplo: 22" type="number" name="edad" class="form-control col-md-8">
+                                    <input placeholder="ejemplo: 22" type="number" name="edad" id="edad" class="form-control col-md-8">
                                 </div>
                             </div>
                             <br>
                             <div class="row form-group">
                                 <div class="col-md-6">
                                     <label for="telefono" class="col-4">Teléfono:</label>
-                                    <input placeholder="ejemplo: 54967895" type="text" name="telefono" id="telefono" class="form-control col-md-9">
+                                    <input placeholder="ejemplo: 54967895" type="number" name="telefono" id="telefono" class="form-control col-md-9" oninput="validarTelefono(this)">
                                 </div>
 
                                 <div class="col-md-6">

@@ -14,20 +14,34 @@
                 {{ session('asignacionEliminado') }}
             </div>
             @endif
-            <div class="row">
-                <div class="col-md-6 text-right">
-                    <a class="btn btn-success mb-4" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
-                    <a href="{{ route('exportAsignacionToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
-                </div>
-                <div class="col-md-6">
-                    <form action="{{ route('searchAsignacion') }}" method="GET">
+            <div class="row justify-content-between">
+                <div class="col-md-4">
+                    <form action="{{ route('exportAsignacionToExcel') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            <select name="grado" class="form-control text-center">
+                                <option value="">--Seleccionar grado a exportar--</option>
+                                <option value="4to. Magisterio">4to. Magisterio</option>
+                                <option value="5to. Magisterio">5to. Magisterio</option>
+                                <option value="6to. Magisterio">6to. Magisterio</option>
+                            </select>
+                            <span class="input-group-btn" style="margin-left: 5px;">
+                                <button type="submit" class="btn btn-success">Exportar</button>
                             </span>
                         </div>
                     </form>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a class="btn btn-success mb-3" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
+                </div>
+                <div class="col-md-6">
+                <form action="{{ route('searchAsignacion') }}" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">
+                        <span class="input-group-btn" style="margin-left: 5px;">
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </span>
+                    </div>
+                </form>
                 </div>
             </div>
             <table class="table table-bordered table-striped text-center">
@@ -47,12 +61,12 @@
                         <td>{{ $asignacion->grado }}</td>
                         <td>
                         <div class="btn-group">
-                            <a href="{{ route('editasignacion', $asignacion->id) }}" class="btn btn-primary mb-3 mr-3">
+                            <a href="{{ route('editasignacion', $asignacion->id) }}" class="btn btn-primary rounded-circle">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <form action="{{ route('deleteasignacion', $asignacion->id) }}" method="POST" class="Alert-eliminar">
                                 @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso asignado?');" class="btn btn-danger btn-block">
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso asignado?');" class="btn btn-danger rounded-circle">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>

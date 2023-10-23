@@ -1,22 +1,29 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
 <div class="container mt-5">
     <div class="row justify_content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <h2 class="text-center mb-5">Padres o Encargados Registrados</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formpadre') }}">Nuevo</a>
-            <a href="{{ route('exportPadreToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
             @if(session('padreEliminado'))
             <div class="alert alert-success">
                 {{ session('padreEliminado') }}
             </div>
             @endif 
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/formpadre') }}">Nuevo</a>
+                    <a href="{{ route('exportPadreToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchPadre') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
+                            <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">
+                            <span class="input-group-btn" style="margin-left: 5px;">
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </span>
                         </div>
@@ -44,12 +51,12 @@
                         <td>{{ $padre_encargado->alumno->nombre }} {{ $padre_encargado->alumno->apellido }}</td>
                         <td>
                         <div class="btn-group">
-                            <a href="{{ route('editpadre', $padre_encargado->id) }}" class="btn btn-primary mb-3 mr-3">
+                            <a href="{{ route('editpadre', $padre_encargado->id) }}" class="btn btn-primary btn-sm rounded-circle">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <form action="{{ route('deletepadre', $padre_encargado->id) }}" method="POST" class="Alert-eliminar">
                                 @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del padre o encargado del alumno?');" class="btn btn-danger btn-block">
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del padre o encargado del alumno?');" class="btn btn-danger btn-sm rounded-circle">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>

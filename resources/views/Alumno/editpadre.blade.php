@@ -1,12 +1,37 @@
 @extends('layouts.app')
 @section('content')
-<style>.mint-bg {
-    background-color: #FFB6C1;
-    label {
-        font-weight: bold;}
+<style>
+    .mint-bg {
+        background-color: #FFB6C1;
+        padding: 20px;
+        border: 1px solid black;
+    }
+    .mint-bg label {
+        font-weight: bold; 
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+    .custom-btn-width {
+    width: 46%;
+    }
+    .title-container {
+        text-align: center;
+    }
+    .title-container h1 {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title-container i {
+        font-size: 36px;
+        margin-right: 10px;
     }
 </style>
-<div class="container mt-5">
 <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
@@ -26,7 +51,9 @@
                     </ul>
                 </div>
                 @endif
-                <h1 style="text-align: center;">Modificar Padre o encargado</h1>
+                <div class="title-container text-center">
+                    <h1><i class="fas fa-user"></i> Modificar Padre o encargado</h1>
+                </div>
                 <br>
                 <div class="card mint-bg">
                     <form action="{{ route('editencargado', $editpadre->id) }}" method="POST">
@@ -34,27 +61,29 @@
                         @method('PATCH')
                         <div class="card-body">
                             <div class="row form-group">
+                                <div class="col-md-6">
                                 <label form="" class="clo-2">Nombre</label>
                                 <input type="text" name="nombre" class="form-control col-md-9" value="{{ $editpadre->nombre }}">
-                            </div>
-                            <br>
-                            <div class="row form-group">
+                                </div>
+                                <div class="col-md-6"> 
                                 <label form="" class="clo-2">Apellido</label>
                                 <input type="text" name="apellido" class="form-control col-md-9" value="{{ $editpadre->apellido }}">
+                                </div>
                             </div>
                             <br>
                             <div class="row form-group">
+                                <div class="col-md-6">
                                 <label form="" class="clo-2">Teléfono</label>
                                 <input type="text" name="telefono" class="form-control col-md-9" value="{{ $editpadre->telefono }}">
+                                </div>
+                                <div class="col-md-6"> 
+                                <label form="" class="clo-2">Dirección</label>
+                                <input type="text" name="direccion" class="form-control col-md-9" value="{{ $editpadre->direccion }}">
+                                </div>
                             </div>
                             <br>
                             <div class="row form-group">
-                                <label form="" class="clo-2">Dirección</label>
-                                <input type="text" name="direccion" class="form-control col-md-9" value="{{ $editpadre->direccion }}">
-                            </div>
-                            <br>
-                            <div class="row mb-3">
-                                <div class="col-6 offset-3">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Alumno a cargo</label>
                                         <select name="alumno_id" class="form-control" >
@@ -65,10 +94,13 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="row form-group">
-                                <button type="submit" class="btn btn-success col-md-9 offset-2">Guardar</button>
+                                <div class="col-md-6"> 
+                                    <label></label>
+                                    <div class="col-md-12 text-center mt-6">
+                                        <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Guardar</button>
+                                        <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listarpadre') }}">Cancelar</a>
+                                    </div>
+                                </div>
                             </div>
                             <br>
                         </div>

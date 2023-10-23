@@ -2,7 +2,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify_content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <h2 class="text-center mb-5">Actividades administrativas Registradas</h2>
             <a class="btn btn-success mb-4" href="{{ url('/formadmon') }}">Nueva Actividad</a>
             <a href="{{ route('exportAdmonToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
@@ -15,8 +15,8 @@
                 <div class="col-md-6">
                     <form action="{{ route('searchAdmon') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
+                            <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">
+                            <span class="input-group-btn" style="margin-left: 5px;">
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </span>
                         </div>
@@ -52,12 +52,12 @@
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('editadmon', $admon->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <a href="{{ route('editadmon', $admon->id) }}" class="btn btn-primary btn-sm rounded-circle">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('deleteadmon', $admon->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-block">
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos de las actividades administrativas?');" class="btn btn-danger btn-sm rounded-circle" style="margin-left: 5px;">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

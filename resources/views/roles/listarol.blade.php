@@ -16,8 +16,8 @@
                 <div class="col-md-6">
                     <form action="{{ route('searchUser') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
+                            <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">
+                            <span class="input-group-btn" style="margin-left: 5px;">
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </span>
                         </div>
@@ -41,12 +41,12 @@
                         <td>{{ $rol->role }}</td>
                         <td>
                             <div class="btn-group">
-                            <a href="{{ route('editroles', $rol->id) }}" class="btn btn-primary mb-3 mr-3">
+                                <a href="{{ route('editroles', $rol->id) }}" class="btn btn-primary rounded-circle">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('deleterol', $rol->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar el Usuario?');" class="btn btn-danger btn-block">
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar el Usuario?');" class="btn btn-danger rounded-circle" style="margin-left: 5px;">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

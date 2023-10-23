@@ -46,8 +46,13 @@ class ExcelExportController extends Controller{
         header('Cache-Control: max-age=0');
         $writer->save('php://output');
     }    
-    public function exportAsignacionToExcel(){
-        $asignacions = asignacion::all();
+    public function exportAsignacionToExcel(Request $request){
+        $grado = $request->input('grado');
+        $query = Asignacion::query();
+        if (!empty($grado)) {
+            $query->where('grado', $grado);
+        }
+        $asignacions = $query->get();
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->getColumnDimension('A')->setWidth(20); 

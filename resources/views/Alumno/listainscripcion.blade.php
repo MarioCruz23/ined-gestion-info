@@ -1,33 +1,40 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+<div class="container">
     <div class="row justify_content-center">
-        <div class="col-md-10">
-            <h2 class="text-center mb-5">Estudiantes Inscritos</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/forminscripcion') }}">Nueva Inscripción</a>
-            <form action="{{ route('exportInscripcionToExcel') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="grado">Filtrar por Grado:</label>
-                    <select name="grado" class="form-control">
-                        <option value="4to. Magisterio">4to. Magisterio</option>
-                        <option value="5to. Magisterio">5to. Magisterio</option>
-                        <option value="6to. Magisterio">6to. Magisterio</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Exportar a Excel</button>
-            </form>
+        <div class="col-md-12">
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Estudiantes Inscritos</strong></h2>
             @if(session('inscripcionEliminado'))
             <div class="alert alert-success">
                 {{ session('inscripcionEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row justify-content-between">
+                <div class="col-md-4">
+                    <form action="{{ route('exportInscripcionToExcel') }}" method="POST" class="form-inline d-flex align-items-center">
+                        @csrf
+                        <select name="grado" class="form-control text-center">
+                            <option value="" selected>-- Seleccione Grado --</option>
+                            <option value="4to. Magisterio">4to. Magisterio</option>
+                            <option value="5to. Magisterio">5to. Magisterio</option>
+                            <option value="6to. Magisterio">6to. Magisterio</option>
+                        </select>
+                        <button type="submit" class="btn btn-success ml-1" style="margin-left: 5px;">Exportar</button>
+                    </form>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a class="btn btn-secondary mb-3" href="{{ url('/forminscripcion') }}">Nueva Inscripción</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchInscripcion') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
+                            <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">
+                            <span class="input-group-btn" style="margin-left: 5px;">
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </span>
                         </div>
@@ -59,12 +66,12 @@
                         <td>{{ $inscripcion->alumno->cui }}</td>
                         <td>
                         <div class="btn-group">
-                            <a href="{{ route('editinscripcion', $inscripcion->id) }}" class="btn btn-primary mb-3 mr-3">
+                            <a href="{{ route('editinscripcion', $inscripcion->id) }}" class="btn btn-primary btn-sm rounded-circle">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <form action="{{ route('deleteinscripcion', $inscripcion->id) }}" method="POST" class="Alert-eliminar">
                                 @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del Estudiante inscrito?');" class="btn btn-danger btn-block">
+                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del Estudiante inscrito?');" class="btn btn-danger btn-sm rounded-circle">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
