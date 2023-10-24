@@ -1,16 +1,23 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+<div class="container">
     <div class="row justify_content-center">
         <div class="col-md-12">
-            <h2 class="text-center mb-5">Pensum Registradas</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formpensum') }}">Nuevo Pensum</a>
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Pensum Registrados</strong></h2>    
             @if(session('pensumEliminado'))
             <div class="alert alert-success">
                 {{ session('pensumEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/formpensum') }}">Nuevo Pensum</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchPensum') }}" method="GET">
                         <div class="input-group">
@@ -26,7 +33,7 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Archivo/Imagen</th>
+                        <th>Archivo</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

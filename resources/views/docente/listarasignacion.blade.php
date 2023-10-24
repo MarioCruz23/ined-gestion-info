@@ -18,7 +18,7 @@
                 <div class="col-md-4">
                     <form action="{{ route('exportAsignacionToExcel') }}" method="GET">
                         <div class="input-group">
-                            <select name="grado" class="form-control text-center">
+                            <select name="grado" class="form-control text-center rounded-pill">
                                 <option value="">--Seleccionar grado a exportar--</option>
                                 <option value="4to. Magisterio">4to. Magisterio</option>
                                 <option value="5to. Magisterio">5to. Magisterio</option>

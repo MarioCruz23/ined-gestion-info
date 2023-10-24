@@ -18,7 +18,7 @@
                 <div class="col-md-4">
                     <form action="{{ route('exportInscripcionToExcel') }}" method="POST" class="form-inline d-flex align-items-center">
                         @csrf
-                        <select name="grado" class="form-control text-center">
+                        <select name="grado" class="form-control text-center rounded-pill">
                             <option value="" selected>-- Seleccione Grado --</option>
                             <option value="4to. Magisterio">4to. Magisterio</option>
                             <option value="5to. Magisterio">5to. Magisterio</option>

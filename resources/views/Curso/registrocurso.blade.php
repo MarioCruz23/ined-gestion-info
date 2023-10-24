@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
-<div class="container mt-5">
+
+<div class="container">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
                 <!-- Mensaje flash -->
@@ -10,7 +10,6 @@
                     {{ session('cursoGuardado') }}
                 </div>
                 @endif
-                validación de errores
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -60,5 +59,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

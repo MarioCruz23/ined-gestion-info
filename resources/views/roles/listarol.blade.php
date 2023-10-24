@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+<div class="container">
     <div class="row justify_content-center">
         <div class="col-md-10-center">
             <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Usuarios Registrados</strong></h2>
@@ -41,12 +46,12 @@
                         <td>{{ $rol->role }}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('editroles', $rol->id) }}" class="btn btn-primary rounded-circle">
+                                <a href="{{ route('editroles', $rol->id) }}" class="btn btn-primary btn-sm rounded-circle">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('deleterol', $rol->id) }}" method="POST" class="Alert-eliminar">
                                     @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar el Usuario?');" class="btn btn-danger rounded-circle" style="margin-left: 5px;">
+                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar el Usuario?');" class="btn btn-danger btn-sm rounded-circle" style="margin-left: 5px;">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

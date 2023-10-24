@@ -68,7 +68,7 @@
                 </div>
                 @endif
                 <div class="title-container text-center">
-                    <h1><i class="fas fa-user"></i> Formulario registrar Estudiante</h1>
+                    <h1><i class="fas fa-user"></i> Formulario de Registro Estudiante</h1>
                 </div>
                 <br>
                 <div class="card mint-bg">
@@ -136,9 +136,11 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row form-group">                                
-                                <div class="col-md-12 text-center mt-6">
-                                    <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Guardar</button>
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary  btn-block custom-btn-width">Guardar</button>
+                                </div>
+                                <div class="col-md-6"> 
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menualu') }}">Cancelar</a>
                                 </div>
                             </div>

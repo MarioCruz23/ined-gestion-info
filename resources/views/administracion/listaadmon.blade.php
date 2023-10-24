@@ -1,17 +1,39 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    .btn {
+        margin-right: 5px;
+    }
+    table.table-sm {
+        font-size: 11px;
+    }
+    table.table-sm th, table.table-sm td {
+        padding: 0.3rem;
+    }
+    table.table-sm th {
+        background-color: #f5f5f5;
+    }
+    .custom-btn-sm {
+        width: 28px;
+        height: 28px; 
+        font-size: 13px;
+        padding: 0;
+    }
+</style>
 <div class="container mt-5">
     <div class="row justify_content-center">
         <div class="col-md-12">
-            <h2 class="text-center mb-5">Actividades administrativas Registradas</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/formadmon') }}">Nueva Actividad</a>
-            <a href="{{ route('exportAdmonToExcel') }}" class="btn btn-primary">Exportar a Excel</a>
+            <h2 class="text-center mb-5"><i class="fas fa-users"></i> <strong>Actividades administrativas Registradas</strong></h2>
             @if(session('actividadadmonEliminado'))
             <div class="alert alert-success">
                 {{ session('actividadadmonEliminado') }}
             </div>
             @endif
-            <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-success mb-4" href="{{ url('/formadmon') }}">Nueva Actividad</a>
+                    <a href="{{ route('exportAdmonToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
+                </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchAdmon') }}" method="GET">
                         <div class="input-group">
