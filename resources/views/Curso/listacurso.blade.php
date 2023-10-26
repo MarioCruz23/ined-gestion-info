@@ -30,6 +30,56 @@
         background-color: #0056b3;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $('.delete-curso').click(function (event) {
+            event.preventDefault();
+            var button = $(this);
+            var id = button.data('id');
+            Swal.fire({
+                title: '¿Seguro que desea borrar los datos de este curso?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/deletecurso/' + id, 
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.message === 'Curso eliminado exitosamente') { 
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Éxito',
+                                    text: data.message,
+                                });
+                                button.closest('tr').remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: data.message,
+                                });
+                            }
+                        },
+                        error: function (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Se produjo un error al eliminar el curso.'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
     <div class="row justify_content-center">
         <div class="col-md-12">
@@ -79,8 +129,9 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('deletecurso', $curso->id) }}" method="POST" class="Alert-eliminar">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso?');" class="btn btn-danger btn-sm rounded-circle" style="margin-left: 5px;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm rounded-circle delete-curso" data-id="{{ $curso->id }}">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

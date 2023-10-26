@@ -32,6 +32,37 @@
         margin-right: 10px;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: new FormData(this),
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: data.message,
+                    });
+                },
+                error: function (data) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Se produjo un error al editar la asignación de curso a docente.'
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container mt-5">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">
@@ -60,37 +91,43 @@
                         @csrf
                         @method('PATCH')
                         <div class="card-body">
-                            <div class="form-group">
-                                <label>Docente:</label>
-                                <select name="docente_id" class="form-control text-center">
-                                    <option value="{{ $editasignacion->docente_id }}">{{ $editasignacion->docente->nombre }} {{ $editasignacion->docente->apellido }}</option>
-                                    @foreach( $docentes as $docente)
-                                        <option value="{{$docente->id}}"> {{$docente->nombre}} {{$docente->apellido}} </option>
-                                    @endforeach
-                                </select>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label>Docente:</label>
+                                    <select name="docente_id" class="form-control text-center">
+                                        <option value="{{ $editasignacion->docente_id }}">{{ $editasignacion->docente->nombre }} {{ $editasignacion->docente->apellido }}</option>
+                                        @foreach( $docentes as $docente)
+                                            <option value="{{$docente->id}}"> {{$docente->nombre}} {{$docente->apellido}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <br>
-                            <div class="form-group">
-                                <label>Curso:</label>
-                                <select name="curso_id" class="form-control text-center" >
-                                    <option value="{{ $editasignacion->curso_id }}">{{ $editasignacion->curso->nombre }} </option>
-                                    @foreach( $cursos as $curso)
-                                        <option value="{{$curso->id}}"> {{$curso->nombre}} </option>
-                                    @endforeach
-                                </select>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label>Curso:</label>
+                                    <select name="curso_id" class="form-control text-center" >
+                                        <option value="{{ $editasignacion->curso_id }}">{{ $editasignacion->curso->nombre }} </option>
+                                        @foreach( $cursos as $curso)
+                                            <option value="{{$curso->id}}"> {{$curso->nombre}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <br>
-                            <div class="form-group">
-                                <label for="grado">Grado:</label>
-                                <select name="grado" id="grado" class="form-control text-center">
-                                    <option value="" selected>-- Seleccione el nivel --</option>
-                                    <option value="4to. Magisterio" {{ $editasignacion->grado == '4to. Magisterio' ? 'selected' : '' }}>4to. Magisterio</option>
-                                    <option value="5to. Magisterio" {{ $editasignacion->grado == '5to. Magisterio' ? 'selected' : '' }}>5to. Magisterio</option>
-                                    <option value="6to. Magisterio" {{ $editasignacion->grado == '6to. Magisterio' ? 'selected' : '' }}>6to. Magisterio</option>
-                                </select>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="grado">Grado:</label>
+                                    <select name="grado" id="grado" class="form-control text-center">
+                                        <option value="" selected>-- Seleccione el nivel --</option>
+                                        <option value="4to. Magisterio" {{ $editasignacion->grado == '4to. Magisterio' ? 'selected' : '' }}>4to. Magisterio</option>
+                                        <option value="5to. Magisterio" {{ $editasignacion->grado == '5to. Magisterio' ? 'selected' : '' }}>5to. Magisterio</option>
+                                        <option value="6to. Magisterio" {{ $editasignacion->grado == '6to. Magisterio' ? 'selected' : '' }}>6to. Magisterio</option>
+                                    </select>
+                                </div>
                             </div>
-                            </div>
-                            <div class="form-group">
+                            <br>
+                            <div class="row form-group">
                                 <div class="col-md-12 text-center mt-2">
                                     <button type="submit" class="btn btn-primary btn-block custom-btn-width">Editar</button>    
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listarasignacion') }}">Cancelar</a>

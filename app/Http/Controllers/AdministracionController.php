@@ -29,7 +29,7 @@ class AdministracionController extends Controller
             $admondata['archivo'] = $fileName;
         }
         Administracion::insert($admondata);
-        return back()->with('actividadAdmonGuardado', 'Actividad administrativa guardada');
+        return response()->json(['message' => 'Actividad administrativa guardada exitosamente']);
     }
     public function listaradmon(){
         $admon['admons']=Administracion::paginate(10);
@@ -37,7 +37,7 @@ class AdministracionController extends Controller
     }
     public function deleteadmon($id){
         Administracion::destroy($id);
-        return back()->with('actividadadmonEliminado', 'Actividad Aministrativa Eliminado');
+        return response()->json(['message' => 'Actividad administrativa eliminada exitosamente']);
     }
     public function editadmon($id){
         $editadmon = Administracion::findOrFail($id);
@@ -54,9 +54,8 @@ class AdministracionController extends Controller
             $admondata['archivo'] = $archivoFileName;
         }
         $admon->update($admondata);
-        return back()->with('actividadAdministrativoModificado', 'Dato administrativo fue modificado');
+        return response()->json(['message' => 'Dato administrativo fue modificado exitosamente']);
     }
-    
     public function searchAdmon(Request $request) {
         $searchTerm = $request->input('search');
         $admons = Administracion::where('nombreact', 'like', '%' . $searchTerm . '%')

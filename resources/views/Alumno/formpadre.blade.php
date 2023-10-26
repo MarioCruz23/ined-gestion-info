@@ -41,6 +41,35 @@
         }
     }
 </script>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: data.message,
+                    });
+                },
+                error: function (data) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Se produjo un error al guardar al padre o encargado.'
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">

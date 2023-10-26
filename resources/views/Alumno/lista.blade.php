@@ -49,6 +49,56 @@
         background-color: #0056b3;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $('.delete-alumno').click(function (event) {
+            event.preventDefault();
+            var button = $(this);
+            var id = button.data('id');
+            Swal.fire({
+                title: '¿Seguro que desea borrar los datos de este alumno?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/deletealumno/' + id,
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.message === 'Alumno eliminado exitosamente') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Éxito',
+                                    text: data.message,
+                                });
+                                button.closest('tr').remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: data.message,
+                                });
+                            }
+                        },
+                        error: function (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Se produjo un error al eliminar el alumno.'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
     <div class="row justify_content-center">
         <div class="col-md-12">
@@ -110,8 +160,9 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('deletealumno', $alumno->id) }}" method="POST" class="Alert-eliminar">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del alumno?');" class="btn btn-danger btn-sm rounded-circle custom-btn-sm">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger custom-btn-sm btn-sm rounded-circle delete-alumno" data-id="{{ $alumno->id }}">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

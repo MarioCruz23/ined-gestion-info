@@ -22,7 +22,7 @@ class PadreController extends Controller
         ]);
         $padredata=request()->except('_token');
         padreencargado::insert($padredata);
-        return back()->with('padreGuardado', 'Padre o encargado Guardado');
+        return response()->json(['message' => 'Padre o encargado guardado exitosamente']);
     }
     public function listarpadre(){
         $data['padre_encargados'] = padreencargado::paginate(50);
@@ -30,8 +30,8 @@ class PadreController extends Controller
         return view('Alumno.listapadre', $data);
     }
     public function deletepadre($id){
-            padreencargado::destroy($id);
-        return back()->with('padreEliminado', 'Padre o Encargado Eliminado');
+        padreencargado::destroy($id);
+        return response()->json(['message' => 'Padre o Encargado eliminado exitosamente']);
     }
     public function editpadre($id){
         $editpadre = padreencargado::findOrFail($id);
@@ -41,7 +41,7 @@ class PadreController extends Controller
     public function editencargado(Request $request, $id){
         $datoencargado = request()->except((['_token','_method']));
         padreencargado::where('id', '=', $id)->update($datoencargado);
-        return back()->with('padreModificado','Dato fue modificado');
+        return response()->json(['message' => 'Datos del padre o encargado modificados exitosamente']);
     }
     public function searchPadre(Request $request) {
         $search = $request->input('search');

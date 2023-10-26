@@ -36,7 +36,7 @@ class graduandosController extends Controller
             $graduandodata['constancia'] = $fileName;
         }
         graduandos::insert($graduandodata);
-        return back()->with('graduandoGuardado', 'Graduando guardada');
+        return response()->json(['message' => 'Graduando guardado exitosamente']);
     }
     public function listargraduando(){
         $graduando['graduandos']=graduandos::paginate(20);
@@ -44,7 +44,7 @@ class graduandosController extends Controller
     }
     public function deletegraduando($id){
         graduandos::destroy($id);
-        return back()->with('graduandoEliminado', 'Graduando Eliminado');
+        return response()->json(['message' => 'Graduando eliminado exitosamente']);
     }
     public function editgraduando($id){
         $editgraduando = graduandos::findOrFail($id);
@@ -67,7 +67,7 @@ class graduandosController extends Controller
             $graduandodata['constancia'] = $constanciaFileName;
         }
         $graduando->update($graduandodata);
-        return back()->with('graduandoModificado', 'Datos del Graduando fueron modificados');
+        return response()->json(['message' => 'Datos del Graduando fueron modificados exitosamente']);
     }    
     public function searchGraduando(Request $request) {
         $search = $request->input('search');

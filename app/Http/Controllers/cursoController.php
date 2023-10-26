@@ -21,7 +21,7 @@ class cursoController extends Controller
         ]);
         $cursodata=request()->except('_token');
         curso::insert($cursodata);
-        return back()->with('cursoGuardado', 'Curso Guardado');
+        return response()->json(['message' => 'Curso guardado exitosamente']);
     }
     public function listarcurso(){
         $data['cursos'] = curso::paginate(50);
@@ -29,7 +29,7 @@ class cursoController extends Controller
     }
     public function deletecurso($id){
         curso::destroy($id);
-        return back()->with('cursoEliminado', 'Curso Eliminado');
+        return response()->json(['message' => 'Curso eliminado exitosamente']);
     }
     public function editcurso($id){
         $editcurso = curso::findOrFail($id);
@@ -39,7 +39,7 @@ class cursoController extends Controller
     public function editcur(Request $request, $id){
         $datocurso = request()->except((['_token','_method']));
         curso::where('id', '=', $id)->update($datocurso);
-        return back()->with('cursoModificado','Curso modificado');
+        return response()->json(['message' => 'Curso modificado exitosamente']);
     }
     public function searchCurso(Request $request) {
         $search = $request->input('search');

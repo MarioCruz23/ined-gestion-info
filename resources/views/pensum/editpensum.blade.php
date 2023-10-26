@@ -32,6 +32,37 @@
         margin-right: 10px;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: new FormData(this),
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: data.message,
+                    });
+                },
+                error: function (data) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Se produjo un error al editar el pensum.'
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
         <div class="row justify-content-center"> 
             <div class="col-md-7 mt-5">

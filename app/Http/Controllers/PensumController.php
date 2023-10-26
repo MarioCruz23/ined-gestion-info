@@ -23,7 +23,7 @@ class PensumController extends Controller
             $pensumdata['archivopensum'] = $fileName;
         }
         pensum::insert($pensumdata);
-        return back()->with('pensumGuardado', 'Pensum guardada');
+        return response()->json(['message' => 'Pensum guardado exitosamente']);
     }
     public function listarpensum(){
         $pensum['pensums']=pensum::paginate(30);
@@ -31,7 +31,7 @@ class PensumController extends Controller
     }
     public function deletepensum($id){
         pensum::destroy($id);
-        return back()->with('pensumEliminado', 'Pensum Eliminado');
+        return response()->json(['message' => 'Pensum eliminado exitosamente']);
     }
     public function editpensum($id){
         $editpensum = pensum::findOrFail($id);
@@ -47,7 +47,7 @@ class PensumController extends Controller
             $pensumdata['archivopensum'] = $archivoFileName;
         }
         $pensum->update($pensumdata);
-        return back()->with('pensumModificado', 'Dato del pensum fue modificado');
+        return response()->json(['message' => 'Dato del pensum fue modificado exitosamente']);
     }
     public function searchPensum(Request $request) {
         $search = $request->input('search');

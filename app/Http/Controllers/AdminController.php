@@ -14,10 +14,15 @@ class AdminController extends Controller
         $rol['rols']=User::paginate(12);
         return view('roles.listarol', $rol);
     }
-    public function deleterol($id){
-        User::destroy($id);
-        return back()->with('usuarioEliminado', 'Usuario Eliminado');
-    }
+    public function deleterol($id) {
+        try {
+            $user = User::findOrFail($id);
+            $user->delete();
+            return response()->json(['message' => 'Usuario eliminado exitosamente']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Se produjo un error al eliminar el usuario']);
+        }
+    }    
     public function editroles($id){
         $editrol = User::findOrFail($id);
         return view('roles.editrol', compact('editrol'));
@@ -25,7 +30,7 @@ class AdminController extends Controller
     public function editrol(Request $request, $id){
         $datorol = request()->except((['_token','_method']));
         User::where('id', '=', $id)->update($datorol);
-        return back()->with('usuarioModificado','Usuario fue modificado');
+        return response()->json(['message' => 'Rol del usuario modificado exitosamente']);
     }
     public function searchUser(Request $request) {
         $search = $request->input('search');

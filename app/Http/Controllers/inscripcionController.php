@@ -43,7 +43,7 @@ class inscripcionController extends Controller
             $inscripcion->grado = $request->input('grado');
             $inscripcion->anio = $request->input('anio');
             $inscripcion->save();
-            return back()->with('inscripcionGuardado', 'Estudiante inscrito exitosamente');
+            return response()->json(['message' => 'Estudiante inscrito exitosamente']);
         }
         return back()->with('error', 'Estudiante no encontrado');
     }    
@@ -54,7 +54,7 @@ class inscripcionController extends Controller
     }
     public function deleteinscripcion($id){
         inscripcion::destroy($id);
-    return back()->with('inscripcionEliminado', 'Estudiante inscrito Eliminado');
+        return response()->json(['message' => 'Estudiante inscrito eliminado exitosamente']);
     }
     public function editinscripcion($id){
         $editinscripcion = inscripcion::findOrFail($id);
@@ -77,7 +77,7 @@ class inscripcionController extends Controller
         $datoinscripcion = $request->only(['nacionalidad', 'grado', 'anio']);
         $datoinscripcion['alumno_id'] = $nuevoEstudiante->id;
         inscripcion::where('id', '=', $id)->update($datoinscripcion);
-        return back()->with('inscripcionModificado','Dato fue modificado');
+        return response()->json(['message' => 'Datos de inscripción modificados exitosamente']);
     }    
     public function searchInscripcion(Request $request) {
         $search = $request->input('search');

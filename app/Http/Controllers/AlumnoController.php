@@ -12,7 +12,6 @@ class AlumnoController extends Controller
         return view('Alumno.registro');
     }
     public function savealumno(Request $request){
-
         $validator = $this->validate($request, [
             'codigoes' => 'required|string|max:255',
             'nombre' => 'required|string|max:255',
@@ -27,8 +26,7 @@ class AlumnoController extends Controller
         ]);
         $alumnodata = request()->except('_token');
         alumno::insert($alumnodata);
-
-        return back()->with('alumnoGuardado', 'Alumno Guardado');
+        return response()->json(['message' => 'Alumno guardado exitosamente']);
     }
     public function listaralumno (){
         $data['alumnos'] = alumno::paginate(50);
@@ -37,7 +35,7 @@ class AlumnoController extends Controller
     }
     public function deletealumno ($id){
         alumno::destroy($id);
-        return back()->with('alumnoEliminado', 'Alumno Eliminado');
+        return response()->json(['message' => 'Alumno eliminado exitosamente']);
     }
     public function editalumno($id){
         $editalumno = alumno::findOrFail($id);
@@ -47,7 +45,7 @@ class AlumnoController extends Controller
     public function editalu(Request $request, $id){
         $datoalumno = request()->except((['_token','_method']));
         alumno::where('id', '=', $id)->update($datoalumno);
-        return back()->with('alumnoModificado','Dato fue modificado');
+        return response()->json(['message' => 'Datos del alumno modificados exitosamente']);
     }
     public function searchAlumno(Request $request) {
         $search = $request->input('search');

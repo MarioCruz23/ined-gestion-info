@@ -30,6 +30,56 @@
         background-color: #0056b3;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $('.delete-padre').click(function (event) {
+            event.preventDefault();
+            var button = $(this);
+            var id = button.data('id');
+            Swal.fire({
+                title: '¿Seguro que desea borrar los datos de este padre o encargado del alumno?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/deletepadre/' + id,
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.message === 'Padre o Encargado eliminado exitosamente') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Éxito',
+                                    text: data.message,
+                                });
+                                button.closest('tr').remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: data.message,
+                                });
+                            }
+                        },
+                        error: function (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Se produjo un error al eliminar el padre o encargado.'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container mt-5">
     <div class="row justify_content-center">
         <div class="col-md-12">
@@ -81,8 +131,9 @@
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <form action="{{ route('deletepadre', $padre_encargado->id) }}" method="POST" class="Alert-eliminar">
-                                @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del padre o encargado del alumno?');" class="btn btn-danger btn-sm rounded-circle">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm rounded-circle delete-padre" data-id="{{ $padre_encargado->id }}">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>

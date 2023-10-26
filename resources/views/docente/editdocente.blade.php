@@ -25,16 +25,38 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: data.message,
+                    });
+                },
+                error: function (data) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Se produjo un error al modificar los datos del docente.'
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
     <div class="row justify-content-center"> 
         <div class="col-md-7 mt-5">
-            <!-- Mensaje flash -->
-            @if(session('docenteModificado'))
-            <div class="alert alert-success">
-                {{ session('docenteModificado') }}
-            </div>
-            @endif
-            <!-- validación de errores -->
             @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -105,7 +127,7 @@
                             <div class="col-md-6">
                                 <div class="col-md-12 text-center mt-4">
                                     <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Guardar Edición</button>    
-                                    <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menudocen') }}">Cancelar</a>
+                                    <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listardocente') }}">Cancelar</a>
                                 </div>
                             </div>
                         </div>

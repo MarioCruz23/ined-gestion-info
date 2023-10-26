@@ -30,6 +30,56 @@
         background-color: #0056b3;
     }
 </style>
+<script>
+$(document).ready(function () {
+    $('.delete-asignacion').click(function (event) {
+        event.preventDefault();
+        var button = $(this);
+        var id = button.data('id');
+        Swal.fire({
+            title: '¿Seguro que desea borrar los datos de esta asignación de curso?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí',
+            cancelButtonText: 'No',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/deleteasignacion/' + id, 
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.message === 'Asignación de curso eliminada exitosamente') { 
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Éxito',
+                                text: data.message,
+                            });
+                            button.closest('tr').remove();
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: data.message,
+                            });
+                        }
+                    },
+                    error: function (data) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Se produjo un error al eliminar la asignación de curso.'
+                        });
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 <div class="container mt-3">
     <div class="row justify_content-center">
         <div class="col-md-12">
@@ -91,8 +141,9 @@
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <form action="{{ route('deleteasignacion', $asignacion->id) }}" method="POST" class="Alert-eliminar">
-                                @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del curso asignado?');" class="btn btn-danger rounded-circle">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger rounded-circle delete-asignacion" data-id="{{ $asignacion->id }}">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>

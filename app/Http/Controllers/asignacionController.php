@@ -23,7 +23,7 @@ class asignacionController extends Controller
         ]);
         $asignaciondata = request()->except('_token');
         asignacion::insert($asignaciondata);
-        return back()->with('asignacionGuardado', 'Asignación de curso a docente Guardado');
+        return response()->json(['message' => 'Asignación de curso a docente guardada exitosamente']);
     }
     public function listarasignacion(){
         $data['asignacions'] = asignacion::paginate(10);
@@ -32,7 +32,7 @@ class asignacionController extends Controller
     }   
     public function deleteasignacion($id){
         asignacion::destroy($id);
-        return back()->with('asignacionEliminado', 'Asignación de curso Eliminado');
+        return response()->json(['message' => 'Asignación de curso eliminada exitosamente']);
     }
     public function editasignacion($id){
         $editasignacion = asignacion::findOrFail($id);
@@ -43,7 +43,7 @@ class asignacionController extends Controller
     public function editasig(Request $request, $id){
         $datoasignacion = request()->except((['_token','_method']));
         asignacion::where('id', '=', $id)->update($datoasignacion);
-        return back()->with('asignacionModificado','Dato fue modificado');
+        return response()->json(['message' => 'Asignación de curso a docente modificada exitosamente']);
     }
     public function searchAsignacion(Request $request) {
         $search = $request->input('search');

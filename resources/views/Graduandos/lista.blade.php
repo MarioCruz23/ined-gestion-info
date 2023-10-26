@@ -39,6 +39,57 @@
         background-color: #0056b3;
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function () {
+        $('.delete-graduando').click(function (event) {
+            event.preventDefault();
+            var button = $(this);
+            var id = button.data('id');
+            Swal.fire({
+                title: '¿Seguro que desea borrar los datos de este graduando?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/deletegraduando/' + id,
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.message === 'Graduando eliminado exitosamente') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Éxito',
+                                    text: data.message,
+                                });
+                                button.closest('tr').remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: data.message,
+                                });
+                            }
+                        },
+                        error: function (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Se produjo un error al eliminar el graduando.'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 <div class="container">
     <div class="row justify_content-center">
         <div class="col-md-12">
@@ -103,12 +154,13 @@
                             <a href="{{ route('editgraduando', $graduando->id) }}" class="btn btn-primary btn-sm rounded-circle">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                                <form action="{{ route('deletegraduando', $graduando->id) }}" method="POST" class="Alert-eliminar">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Seguro quiere borrar los datos del graduando?');" class="btn btn-danger btn-sm rounded-circle">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
+                            <form action="{{ route('deletegraduando', $graduando->id) }}" method="POST" class="Alert-eliminar">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm rounded-circle delete-graduando" data-id="{{ $graduando->id }}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
                             </div>
                         </td>
                     </tr>
