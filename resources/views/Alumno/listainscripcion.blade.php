@@ -4,6 +4,35 @@
     .btn {
         margin-right: 5px;
     }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        background-color: #ddd;
+        color: #555;
+        cursor: not-allowed;
+    }
+
+    .pagination .page-item a.page-link {
+        background-color: #007BFF;
+        color: #fff;
+        border: 1px solid #007BFF;
+        border-radius: 50%;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+    .pagination .page-item a.page-link:hover {
+        background-color: #0056b3;
+    }
 </style>
 <div class="container">
     <div class="row justify_content-center">
@@ -41,6 +70,7 @@
                     </form>
                 </div>
             </div>
+            <div class="table-responsive">
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -81,6 +111,7 @@
                 @endforeach
                 </tbody>
             </table>
+            </div>
             {{ $inscripcions->links() }}
         </div>
     </div>

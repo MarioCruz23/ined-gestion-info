@@ -66,7 +66,7 @@
                         <br>
                         <div class="row form-group">
                             <div class="col-md-6">
-                                <label form="" class="col-4">Fecha de nacimiento: </label>
+                                <label form="" class="col-8">Fecha de nacimiento: </label>
                                 <input type="date" name="fechanac" class="form-control col-md-9" value="{{ $editdocente->fechanac }}">
                             </div>
                             <div class="col-md-6"> 
@@ -74,6 +74,7 @@
                                 <input type="text" name="edad" class="form-control col-md-9" value="{{ $editdocente->edad }}">
                             </div>
                         </div>
+                        <br>
                         <div class="row form-group">
                             <div class="col-md-6">
                                 <label form="" class="col-4">Teléfono: </label>
@@ -102,7 +103,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="col-md-12 text-center mt-3">
+                                <div class="col-md-12 text-center mt-4">
                                     <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Guardar Edición</button>    
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menudocen') }}">Cancelar</a>
                                 </div>

@@ -129,10 +129,12 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row form-group">                                
-                                <div class="col-md-12 text-center mt-6">
-                                    <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Editar</button>
-                                    <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listaralumno') }}">Cancelar</a>
+                            <div class="row form-group">
+                                <div class="col-md-6 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary  custom-btn-width">Editar</button>
+                                </div>
+                                <div class="col-md-6"> 
+                                    <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menualu') }}">Cancelar</a>
                                 </div>
                             </div>
                         </div>

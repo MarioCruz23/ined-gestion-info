@@ -84,7 +84,7 @@
             <a href="{{ url('/menualu') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/nino-estudiante-dibujos-animados-suministros_18591-2863.jpg?w=740">
+                        src="https://img.freepik.com/vector-premium/ninos-escuela-paran-sosteniendo-libros-mochilas-personajes-dibujos-animados_181870-580.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Estudiantes</h1>
@@ -95,7 +95,7 @@
             <a href="{{ url('/menugraduandos') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-gratis/grupo-personas-que-graduan-ilustrado_23-2148571139.jpg?w=740&t=st=1694844901~exp=1694845501~hmac=d8c4be615c993d48bbae61b1724e173ef22a627aaed6851cbfa16d7d43bf2c1e">
+                        src="https://trabalhosacademicos.com.br/wp-content/uploads/2021/06/Depositphotos_318276402_l-2015-1536x1536.jpg">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Graduandos</h1>
@@ -112,7 +112,7 @@
             <a href="{{ url('/menuadmon') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/gerente-administrador-hombre-hotel_51635-7414.jpg?w=740">
+                        src="https://img.freepik.com/vector-gratis/mujer-negocios-haciendo-varias-tareas-al-mismo-tiempo_23-2148826315.jpg?w=740&t=st=1698266773~exp=1698267373~hmac=dd2ef30afa37bf0f982793211890899356174605f31784d21c56ea57944fae01">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Administración</h1>
@@ -123,7 +123,7 @@
             <a href="{{ url('/menupensum') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/viejo-libro-abierto-ilustracion-vector-texto-abstracto-estilo-dibujos-animados_543641-1011.jpg?w=2000">
+                        src="https://img.freepik.com/vector-gratis/personajes-libros-coloridos-dibujos-animados-diferentes-acciones-establecidas_74855-25054.jpg?w=740&t=st=1698266979~exp=1698267579~hmac=bab13b8a04cf82a3bf10bff80a2e02ff9fa964203c6e416aff7e7c78653518e6">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Pensum</h1>
@@ -134,7 +134,7 @@
             <a href="{{ url('/menucurso') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://previews.123rf.com/images/iconicbestiary/iconicbestiary1602/iconicbestiary160200011/53122280-lecci%C3%B3n-de-la-escuela-los-peque%C3%B1os-estudiantes-y-el-profesor-aula-con-pizarra-verde-mesa-de-los.jpg">
+                        src="https://img.freepik.com/vector-gratis/cursos-tutoriales-linea_23-2148533000.jpg?w=740&t=st=1698267103~exp=1698267703~hmac=f045d25b1e77d166b43098bfbba316c03eab939e836255efa0506020c834cb76">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Cursos</h1>
@@ -148,7 +148,7 @@
         <div class="galeria">
             <a href="{{ url('/menuasignaciones') }}">
                 <div class="ima">
-                    <img class="m" src="https://img.freepik.com/vector-premium/gerente-administrador-hombre-hotel_51635-7414.jpg?w=740">
+                    <img class="m" src="https://img.freepik.com/foto-gratis/ilustracion-3d-mano-poniendo-garrapata-papel_107791-15903.jpg?w=740&t=st=1698267254~exp=1698267854~hmac=59a6b9500e87ed4b0dafa8384c91b47aa17fda619c040342ec4d0025c23537a1">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Asignaciones</h1>

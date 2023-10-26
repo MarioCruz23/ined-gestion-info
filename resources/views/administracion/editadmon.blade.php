@@ -93,12 +93,13 @@
                             <br>
                             <div class="row form-group">
                                 <div class="col-md-6"> 
-                                    <label form="" class="clo-4">Archivo subido:</label>
+                                    <label form="archivo" class="col-form-label">Archivo subido:</label>
                                     @if($editadmon->archivo)
                                         <a href="{{ asset('uploads/' . $editadmon->archivo) }}" target="_blank">Ver archivo</a>
                                     @else
                                         <span>No hay archivo adjunto</span>
                                     @endif
+                                    <input type="file" class="form-control" id="archivo" name="archivo">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="col-md-12 text-center mt-4">

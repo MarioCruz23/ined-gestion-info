@@ -59,12 +59,13 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-12">
-                                    <label form="" class="clo-6">Archivo Subido:</label>
+                                    <label form="archivopensum" class="col-form-label">Archivo Subido:</label>
                                     @if($editpensum->archivopensum)
                                         <a href="{{ asset('uploads/' . $editpensum->archivopensum) }}" target="_blank">Ver archivo</a>
                                     @else
                                         <span>No hay archivo adjunto</span>
                                     @endif
+                                    <input type="file" class="form-control" id="archivopensum" name="archivopensum">
                                 </div>
                             </div>
                             <br>

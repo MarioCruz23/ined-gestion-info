@@ -137,8 +137,8 @@
                             </div>
                             <br>
                             <div class="row form-group">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary  btn-block custom-btn-width">Guardar</button>
+                                <div class="col-md-6 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary custom-btn-width">Guardar</button>
                                 </div>
                                 <div class="col-md-6"> 
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menualu') }}">Cancelar</a>

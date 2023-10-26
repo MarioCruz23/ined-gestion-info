@@ -37,10 +37,17 @@ class PensumController extends Controller
         $editpensum = pensum::findOrFail($id);
         return view('pensum.editpensum', compact('editpensum'));
     }     
-    public function editpen(Request $request, $id){
-        $datopensum = request()->except((['_token','_method']));
-        pensum::where('id', '=', $id)->update($datopensum);
-        return back()->with('pensumModificado','Dato del pensum fue modificado');
+    public function editpen(Request $request, $id) {
+        $pensum = pensum::findOrFail($id);
+        $pensumdata = $request->except(['_token', '_method']);
+        if ($request->hasFile('archivopensum')) {
+            $archivoFile = $request->file('archivopensum');
+            $archivoFileName = $archivoFile->getClientOriginalName();
+            $archivoFile->move(public_path('uploads'), $archivoFileName);
+            $pensumdata['archivopensum'] = $archivoFileName;
+        }
+        $pensum->update($pensumdata);
+        return back()->with('pensumModificado', 'Dato del pensum fue modificado');
     }
     public function searchPensum(Request $request) {
         $search = $request->input('search');

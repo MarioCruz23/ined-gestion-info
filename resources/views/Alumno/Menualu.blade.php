@@ -56,7 +56,7 @@
 
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
+                        src="https://img.freepik.com/vector-gratis/formulario-documento-linea-acuerdo-digital-contrato-electronico-cuestionario-internet-hacer-lista-tenga-cuenta-boleta-votacion-ilustracion-concepto-elemento-diseno-plano-encuesta_335657-2013.jpg?w=740&t=st=1698268193~exp=1698268793~hmac=7aad2363fc6a168bdb7801e4a934eab5c49fab74d4e2400c45b2746a60282451">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Registro</h1>
@@ -67,7 +67,7 @@
             <a href="{{ url('/listaralumno') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
+                        src="https://img.freepik.com/vector-premium/icono-premium-analisis-crecimiento-estilo-plano_9206-4796.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Reporte</h1>
@@ -85,7 +85,7 @@
 
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
+                        src="https://img.freepik.com/vector-gratis/mano-que-sostiene-pluma-firmar-documento-papel-mujer-que-firma-acuerdo-legal-o-contrato-ilustracion-vectorial-plana-firma-trato-concepto-asociacion-banner-diseno-sitio-web-o-pagina-web-destino_74855-26012.jpg?w=740&t=st=1698269293~exp=1698269893~hmac=d389ebb97a857fc5027b9b15b8f1a3d20ce96179f71386af69beb2cfcc326401">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Inscripción</h1>
@@ -96,7 +96,7 @@
             <a href="{{ url('/menupadre') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-gratis/familia-padres-ninos-dibujos-animados_18591-52204.jpg?w=740&t=st=1694899846~exp=1694900446~hmac=229ac724a7605be771f18a79a91ba7d89c108c598ab25b1b8d9847d938ec071f">
+                        src="https://img.freepik.com/vector-premium/feliz-nino-lindo-nino-primer-dia-escuela-padre_97632-1713.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Padre o encargado</h1>

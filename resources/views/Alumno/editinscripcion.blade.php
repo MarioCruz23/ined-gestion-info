@@ -119,7 +119,7 @@
                             </div>
                             </div>
                             <div class="col-md-6"> 
-                                <div class="col-md-12 text-center mt-3">
+                                <div class="col-md-12 text-center mt-4">
                                     <button type="submit" class="btn btn-primary  btn-block mx-2 custom-btn-width">Editar</button>
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listarinscripcion') }}">Cancelar</a>
                                 </div>

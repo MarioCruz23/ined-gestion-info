@@ -90,20 +90,22 @@
                             <br>
                             <div class="row form-group">
                                 <div class="col-md-6">
-                                <label form="" class="clo-6">Título:</label>
+                                    <label for="titulo" class="col-form-label">Título:</label>
                                     @if($editgraduando->titulo)
                                         <a href="{{ asset('uploads/' . $editgraduando->titulo) }}" target="_blank">Ver archivo</a>
                                     @else
                                         <span>No hay archivo adjunto</span>
                                     @endif
+                                    <input type="file" class="form-control" id="titulo" name="titulo">
                                 </div>
                                 <div class="col-md-6">
-                                <label form="" class="clo-2">Constancia:</label>
+                                    <label for="constancia" class="col-form-label">Constancia:</label>
                                     @if($editgraduando->constancia)
                                         <a href="{{ asset('uploads/' . $editgraduando->constancia) }}" target="_blank">Ver archivo</a>
                                     @else
                                         <span>No hay archivo adjunto</span>
                                     @endif
+                                    <input type="file" class="form-control" id="constancia" name="constancia">
                                 </div>
                             </div>
                             <br>

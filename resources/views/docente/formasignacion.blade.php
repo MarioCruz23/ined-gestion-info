@@ -90,7 +90,7 @@
                         <br>
                         <div class="form-group">
                             <div class="col-md-12 text-center mt-2">
-                                <button type="submit" class="btn btn-success btn-block custom-btn-width">Guardar</button>
+                                <button type="submit" class="btn btn-primary btn-block custom-btn-width">Guardar</button>
                                 <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menuasignación') }}">Cancelar</a>
                             </div>
                         </div>

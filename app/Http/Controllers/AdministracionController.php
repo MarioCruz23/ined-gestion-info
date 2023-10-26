@@ -44,11 +44,19 @@ class AdministracionController extends Controller
         $docentes=Docente::all();
         return view('administracion.editadmon', compact('editadmon', 'docentes'));
     }     
-    public function editad(Request $request, $id){
-        $datoadmon = request()->except((['_token','_method']));
-        Administracion::where('id', '=', $id)->update($datoadmon);
-        return back()->with('actividadAdministrativoModificado','Dato administrativo fue modificado');
+    public function editad(Request $request, $id) {
+        $admon = Administracion::findOrFail($id);
+        $admondata = $request->except(['_token', '_method']);
+        if ($request->hasFile('archivo')) {
+            $archivoFile = $request->file('archivo');
+            $archivoFileName = $archivoFile->getClientOriginalName();
+            $archivoFile->move(public_path('uploads'), $archivoFileName);
+            $admondata['archivo'] = $archivoFileName;
+        }
+        $admon->update($admondata);
+        return back()->with('actividadAdministrativoModificado', 'Dato administrativo fue modificado');
     }
+    
     public function searchAdmon(Request $request) {
         $searchTerm = $request->input('search');
         $admons = Administracion::where('nombreact', 'like', '%' . $searchTerm . '%')

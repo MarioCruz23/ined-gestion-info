@@ -46,16 +46,13 @@
 </style>
 <body>
     <h1 class="j">Menú de Asignaciones</h1>
-    <div class="d-grid gap-2 col-5 mx-auto">
-        <a class="btn btn-outline-info" href="{{ url('/admin') }}">Menú Principal</a>
-    </div>
     <div class="menu-container">
         <div class="galeria">
             <a href="{{ url('/menuasignación') }}">
 
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
+                        src="https://img.freepik.com/vector-premium/ilustracion-diseno-creativo-libro-linea_362714-1045.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Asignación de cursos</h1>
@@ -66,7 +63,7 @@
             <a href="{{ url('/listarol') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
+                        src="https://img.freepik.com/vector-premium/hombre-negocios-sostener-portapapeles-lapiz_33893-177.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Asignación de roles de usuario</h1>

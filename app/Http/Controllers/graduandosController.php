@@ -51,11 +51,24 @@ class graduandosController extends Controller
         $pensums=pensum::all();
         return view('Graduandos.edit', compact('editgraduando', 'pensums'));
     }     
-    public function editgrad(Request $request, $id){
-        $datograduando = request()->except((['_token','_method']));
-        graduandos::where('id', '=', $id)->update($datograduando);
-        return back()->with('graduandoModificado',' dato del Graduando fue modificado');
-    }
+    public function editgrad(Request $request, $id) {
+        $graduando = graduandos::findOrFail($id);
+        $graduandodata = $request->except(['_token', '_method']);
+        if ($request->hasFile('titulo')) {
+            $tituloFile = $request->file('titulo');
+            $tituloFileName = $tituloFile->getClientOriginalName();
+            $tituloFile->move(public_path('uploads'), $tituloFileName);
+            $graduandodata['titulo'] = $tituloFileName;
+        }
+        if ($request->hasFile('constancia')) {
+            $constanciaFile = $request->file('constancia');
+            $constanciaFileName = $constanciaFile->getClientOriginalName();
+            $constanciaFile->move(public_path('uploads'), $constanciaFileName);
+            $graduandodata['constancia'] = $constanciaFileName;
+        }
+        $graduando->update($graduandodata);
+        return back()->with('graduandoModificado', 'Datos del Graduando fueron modificados');
+    }    
     public function searchGraduando(Request $request) {
         $search = $request->input('search');
         $graduandos['graduandos'] = graduandos::where('codigoalu', 'like', '%' . $search . '%')

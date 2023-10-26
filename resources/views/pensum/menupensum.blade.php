@@ -46,16 +46,13 @@
 </style>
 <body>
     <h1 class="j">Menú de gestión de Pensum</h1>
-    <div class="d-grid gap-2 col-5 mx-auto">
-        <a class="btn btn-outline-info" href="{{ url('/admin') }}">Menú Principal</a>
-    </div>
     <div class="menu-container">
         <div class="galeria">
             <a href="{{ url('/formpensum') }}">
 
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-premium/icono-carpeta-archivo-estilo-dibujos-animados-3d-concepto-gestion-archivos_567896-233.jpg?w=740">
+                        src="https://img.freepik.com/vector-gratis/formulario-documento-linea-acuerdo-digital-contrato-electronico-cuestionario-internet-hacer-lista-tenga-cuenta-boleta-votacion-ilustracion-concepto-elemento-diseno-plano-encuesta_335657-2013.jpg?w=740&t=st=1698268193~exp=1698268793~hmac=7aad2363fc6a168bdb7801e4a934eab5c49fab74d4e2400c45b2746a60282451">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Registro</h1>
@@ -66,7 +63,7 @@
             <a href="{{ url('/listarpensum') }}">
                 <div class="ima">
                     <img class="m"
-                        src="https://proprofs-cdn.s3.amazonaws.com/images/FC/user_images/misc/10584445979.png">
+                        src="https://img.freepik.com/vector-premium/icono-premium-analisis-crecimiento-estilo-plano_9206-4796.jpg?w=740">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Reporte</h1>
