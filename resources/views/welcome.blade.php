@@ -1,135 +1,110 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <title>INED PROF. HUGO LEONEL SANCÉ CETINO</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        .links {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .modal-content {
-            background-color: gray;
-            color: white;
-        }
-        .modal-header {
-            border-bottom: 1px solid white;
-        }
-        .btn {
-            background-color: #FFD700;
-            color: #000;
-            border: 1px solid #FFD700;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #FFC600;
-        }
-        h1 {
-            font-size: 24px;
-            text-align: center;
-            line-height: 1.5;
-            margin-top: 50px;
-        }
-        .carousel-inner {
-            width: 100%;
-            max-height: 50vh; 
-        }
-        .carousel-item img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-        }
+@extends('layouts.app')
+@section('content')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .links {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .modal-content {
+        background-color: gray;
+        color: white;
+    }
+    .modal-header {
+        border-bottom: 1px solid white;
+    }
+    .btn {
+        background-color: #FFD700;
+        color: #000;
+        border: 1px solid #FFD700;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #FFC600;
+    }
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.5;
+        margin-top: 50px;
+    }
+    .carousel-inner {
+        width: 100%;
+        max-height: 50vh; 
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
 
-        .carousel-control-prev, .carousel-control-next {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0.5); 
-            border: none; 
-            border-radius: 50%;
-            font-size: 20px; 
-            color: #fff; 
-            line-height: 40px; 
-            text-align: center;
-            transition: background-color 0.3s ease; 
-            position: absolute;
-            top: 50%; 
-            transform: translateY(-50%);
-            cursor: pointer;
-            z-index: 1;
-        }
-        .carousel-control-prev {
-            left: 10px; 
-        }
-        .carousel-control-next {
-            right: 10px;
-        }
-        .nav-item {
-            margin-right: 10px;
-        }
-    </style>
-</head>
+    .carousel-control-prev, .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5); 
+        border: none; 
+        border-radius: 50%;
+        font-size: 20px; 
+        color: #fff; 
+        line-height: 40px; 
+        text-align: center;
+        transition: background-color 0.3s ease; 
+        position: absolute;
+        top: 50%; 
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1;
+    }
+    .carousel-control-prev {
+        left: 10px; 
+    }
+    .carousel-control-next {
+        right: 10px;
+    }
+    .nav-item {
+        margin-right: 10px;
+    }
+</style>
+<style>
+    .centrar-contenido {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
 <body>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://www.coldelvalle.edu.mx/wp-content/uploads/2021/07/como-aprenden-los-alumnos-de-secundaria.jpg"
-                    class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.magisnet.com/wp-content/uploads/2019/02/19-02-20microsoft-1024x682.jpg"
-                    class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.magisnet.com/wp-content/uploads/2022/07/maestros.jpg"
-                    class="d-block w-100" alt="...">
-            </div>
-        </div>
+    <h1 class="text-center" style="font-size: 60px;">Bienvenidos</h1>
+    <div class="container text-center">
+        <h1>INED PROF. HUGO LEONEL SANCÉ CETINO</h1>
+        <h1 style="font-size: 25px;">MAGISTERIO NORMAL PREPRIMARIA</h1>
+        <img src="https://scontent.fgua3-3.fna.fbcdn.net/v/t1.6435-9/120844146_369776814151555_8607832501936159234_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=be3454&_nc_ohc=FcLGVgksJvAAX8L-LJO&_nc_ht=scontent.fgua3-3.fna&oh=00_AfCVXb32T0sorq5glg8ydeAHQ9ff3bBPr1GX6PhjzMU3Qg&oe=65622F67" width="300" height="300">
     </div>
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                INED
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/admin') }}">Gestiones</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    @if (Route::has('login'))
-                        @auth
-                            <li class="nav-item me-2">
-                                <a class="btn btn-warning" href="{{ url('/home') }}">Menu Principal</a>
-                            </li>
-                        @else
-                            <li class="nav-item me-2">
-                                <a class="btn btn-warning" href="{{ route('login') }}">Inicio sesión</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item me-2">
-                                    <a class="btn btn-warning" href="{{ route('register') }}">Registro</a>
-                                </li>
-                            @endif
-                        @endauth
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container mt-3">
+    <br>
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12 mt-5">
-                <h1>INED PROF. HUGO LEONEL SANCÉ CETINO</h1>
+            <div class="col-md-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://www.coldelvalle.edu.mx/wp-content/uploads/2021/07/como-aprenden-los-alumnos-de-secundaria.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.magisnet.com/wp-content/uploads/2019/02/19-02-20microsoft-1024x682.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.magisnet.com/wp-content/uploads/2022/07/maestros.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="row mt-3">
                         <div class="col-md-6">
@@ -198,5 +173,4 @@
         </div>
     </div>
 </body>
-</html>
-
+@endsection

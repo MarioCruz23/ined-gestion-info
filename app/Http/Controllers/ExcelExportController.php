@@ -20,6 +20,10 @@ use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 
 class ExcelExportController extends Controller{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function exportToExcel(){
         $cursos = Curso::all();
         $spreadsheet = new Spreadsheet();

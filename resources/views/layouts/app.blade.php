@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INED</title>
+    <title>INED PROF. HUGO LEONEL SANCÉ CETINO</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.22.0/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -353,7 +353,6 @@
 <div class="menu">
     <ion-icon name="arrow-back-outline"></ion-icon>
 </div>
-
     <div class="barra-lateral">
         <div>
             <div class="nombre-pagina">
@@ -471,23 +470,19 @@
                 </div>
                 @else
                 <div class="nav-item" style="display: flex; align-items: center;">
-    <a id="userDropdown" class="btn btn-warning user-button" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="font-size: 16px; padding: 5px 10px;">
-        <ion-icon name="person-circle-outline" class="user-icon" style="font-size: 20px;"></ion-icon>
-        <span class="user-name" style="font-size: 14px;">{{ Auth::user()->name }}</span>
-    </a>
-    
-    <a class="btn btn-danger logout-button" style="font-size: 16px; padding: 5px 10px; margin-left: 5px;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        <ion-icon name="close-circle-outline" class="logout-icon" style="font-size: 20px;"></ion-icon>
-        <span class="logout-text" style="font-size: 14px;">{{ __('Cerrar Sesión') }}</span>
-    </a>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
-</div>
-
-
-
-
+                    <a id="userDropdown" class="btn btn-warning user-button" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="font-size: 16px; padding: 5px 10px;">
+                        <ion-icon name="person-circle-outline" class="user-icon" style="font-size: 20px;"></ion-icon>
+                        <span class="user-name" style="font-size: 14px;">{{ Auth::user()->name }}</span>
+                    </a>
+                    
+                    <a class="btn btn-danger logout-button" style="font-size: 16px; padding: 5px 10px; margin-left: 5px;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <ion-icon name="close-circle-outline" class="logout-icon" style="font-size: 20px;"></ion-icon>
+                        <span class="logout-text" style="font-size: 14px;">{{ __('Cerrar Sesión') }}</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
                 @endguest
             </div>
         </div>

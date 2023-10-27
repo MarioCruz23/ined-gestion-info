@@ -8,6 +8,10 @@ use App\Models\pensum;
 
 class graduandosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function registro(){
         $pensumids=pensum::all();
         return view('Graduandos.registro', compact('pensumids'));

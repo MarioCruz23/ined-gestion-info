@@ -8,6 +8,10 @@ use App\Models\padreencargado;
 
 class AlumnoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function registroalumno (){
         return view('Alumno.registro');
     }

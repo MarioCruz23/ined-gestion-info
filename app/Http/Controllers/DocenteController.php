@@ -7,6 +7,10 @@ use App\Models\Docente;
 use Carbon\Carbon;
 
 class DocenteController extends Controller{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function savedocente(Request $request){
         $validator = $this->validate($request, [
             'nombre' => 'required|string|max:255',

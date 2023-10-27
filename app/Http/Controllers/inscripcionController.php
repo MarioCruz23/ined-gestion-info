@@ -8,6 +8,10 @@ use App\Models\inscripcion;
 
 class inscripcionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function forminscripcion (){
         $alumnoids=alumno::all();
         return view('Alumno.forminscripción', compact('alumnoids'));

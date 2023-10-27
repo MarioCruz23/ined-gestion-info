@@ -8,6 +8,10 @@ use App\Models\Docente;
 
 class AdministracionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function registro(){
         $docenteids=Docente::all();
         return view('administracion.registroadmon', compact('docenteids'));

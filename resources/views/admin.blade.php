@@ -50,7 +50,6 @@
         text-shadow: 2px 2px 2px purple;
         padding: 2px;
     }
-
     @media (max-width: 767px) {
         .galeria {
             width: 100%;

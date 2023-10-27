@@ -29,6 +29,11 @@
     .pagination .page-item a.page-link:hover {
         background-color: #0056b3;
     }
+    .btn-info::before {
+        content: "+";
+        margin-right: 5px; 
+        font-size: 18px;
+    }
 </style>
 <script>
 $(document).ready(function () {
@@ -106,9 +111,9 @@ $(document).ready(function () {
                     </form>
                 </div>
                 <div class="col-md-2 text-center">
-                    <a class="btn btn-success mb-3" href="{{ url('/formasignacion') }}">Nueva Asignación</a>
+                    <a class="btn btn-info mb-3" href="{{ url('/formasignacion') }}">Nuevo</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                 <form action="{{ route('searchAsignacion') }}" method="GET">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">

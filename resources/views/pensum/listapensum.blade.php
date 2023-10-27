@@ -29,6 +29,11 @@
     .pagination .page-item a.page-link:hover {
         background-color: #0056b3;
     }
+    .btn-info::before {
+        content: "+";
+        margin-right: 5px; 
+        font-size: 18px;
+    }
 </style>
 <script>
     $(document).ready(function () {
@@ -91,7 +96,7 @@
             @endif
             <div class="row">
                 <div class="col-md-6 text-right">
-                    <a class="btn btn-success mb-4" href="{{ url('/formpensum') }}">Nuevo Pensum</a>
+                    <a class="btn btn-info mb-4" href="{{ url('/formpensum') }}">Nuevo Pensum</a>
                 </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchPensum') }}" method="GET">

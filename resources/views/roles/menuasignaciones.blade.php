@@ -40,8 +40,20 @@
     .pie {
         text-align: center;
         text-shadow: 2px 2px 2px purple;
-        padding: 2px;
-        
+        padding: 2px;        
+    }
+    @media (max-width: 767px) {
+        .galeria {
+            width: 100%;
+            max-width: 120px;
+            height: 120px;
+        }
+        .jj {
+            font-size: 14px;
+        }
+        .jjj {
+            font-size: 14px;
+        }
     }
 </style>
 <body>

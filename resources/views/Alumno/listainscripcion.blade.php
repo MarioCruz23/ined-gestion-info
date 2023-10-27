@@ -29,9 +29,13 @@
         padding: 5px 10px;
         text-decoration: none;
     }
-
     .pagination .page-item a.page-link:hover {
         background-color: #0056b3;
+    }
+    .btn-info::before {
+        content: "+";
+        margin-right: 5px; 
+        font-size: 18px;
     }
 </style>
 <script>
@@ -50,7 +54,7 @@
                 if (result.isConfirmed) {
                     $.ajax({
                         type: 'DELETE',
-                        url: '/deleteinscripcion/' + id,  // Ajusta la URL de la eliminación
+                        url: '/deleteinscripcion/' + id, 
                         data: {
                             "_token": "{{ csrf_token() }}"
                         },
@@ -103,13 +107,13 @@
                             <option value="5to. Magisterio">5to. Magisterio</option>
                             <option value="6to. Magisterio">6to. Magisterio</option>
                         </select>
-                        <button type="submit" class="btn btn-success ml-1" style="margin-left: 5px;">Exportar</button>
+                        <button type="submit" class="btn btn-success" style="margin-left: 5px;">Exportar</button>
                     </form>
                 </div>
                 <div class="col-md-2 text-center">
-                    <a class="btn btn-secondary mb-3" href="{{ url('/forminscripcion') }}">Nueva Inscripción</a>
+                    <a class="btn btn-info mb-3" href="{{ url('/forminscripcion') }}">Nuevo</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <form action="{{ route('searchInscripcion') }}" method="GET">
                         <div class="input-group">
                             <input type="text" name="search" class="form-control rounded-pill" placeholder="Buscar...">

@@ -48,6 +48,16 @@
     .pagination .page-item a.page-link:hover {
         background-color: #0056b3;
     }
+    .btn-info::before {
+        content: "+";
+        margin-right: 5px; 
+        font-size: 18px;
+    }
+    .btn-success::after {
+        content: " \1F4C3"; 
+        margin-left: 5px; 
+        font-size: 16px;
+    }
 </style>
 <script>
     $(document).ready(function () {
@@ -110,8 +120,8 @@
             @endif
             <div class="row">
                 <div class="col-md-6 text-right">
-                    <a class="btn btn-success mb-4" href="{{ url('/formalumno') }}">Nuevo Alumno</a>
-                    <a href="{{ route('exportAlumnoToExcel') }}" class="btn btn-success mb-4">Exportar a Excel</a>
+                    <a class="btn btn-info mb-4" href="{{ url('/formalumno') }}">Nuevo</a>
+                    <a href="{{ route('exportAlumnoToExcel') }}" class="btn btn-success mb-4">Exportar</a>
                 </div>
                 <div class="col-md-6">
                     <form action="{{ route('searchAlumno') }}" method="GET">

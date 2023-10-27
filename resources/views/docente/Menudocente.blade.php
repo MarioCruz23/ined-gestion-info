@@ -28,9 +28,9 @@
     }
     .galeria {
         margin: 10px;
-        width: 280px; 
-        height: 280px; 
-        box-shadow: 0 4px 8px 0 lightblue, 0 10px 20px rgb(0, 0, 0, 0.30);
+        width: 280px;
+        height: 280px;
+        box-shadow: 0 4px 8px 0 lightblue, 0 10px 20px rgba(0, 0, 0, 0.30);
     }
     .m {
         width: 100%;
@@ -41,7 +41,20 @@
         text-align: center;
         text-shadow: 2px 2px 2px purple;
         padding: 2px;
-        
+    }
+
+    @media (max-width: 767px) {
+        .galeria {
+            width: 100%;
+            max-width: 120px;
+            height: 120px;
+        }
+        .jj {
+            font-size: 14px;
+        }
+        .jjj {
+            font-size: 14px;
+        }
     }
 </style>
 <body>
@@ -49,10 +62,9 @@
     <div class="menu-container">
         <div class="galeria">
             <a href="{{ url('/formdocente') }}">
-
                 <div class="ima">
                     <img class="m"
-                        src="https://img.freepik.com/vector-gratis/formulario-documento-linea-acuerdo-digital-contrato-electronico-cuestionario-internet-hacer-lista-tenga-cuenta-boleta-votacion-ilustracion-concepto-elemento-diseno-plano-encuesta_335657-2013.jpg?w=740&t=st=1698268193~exp=1698268793~hmac=7aad2363fc6a168bdb7801e4a934eab5c49fab74d4e2400c45b2746a60282451">
+                    src="https://img.freepik.com/vector-gratis/formulario-documento-linea-acuerdo-digital-contrato-electronico-cuestionario-internet-hacer-lista-tenga-cuenta-boleta-votacion-ilustracion-concepto-elemento-diseno-plano-encuesta_335657-2013.jpg?w=740&t=st=1698268193~exp=1698268793~hmac=7aad2363fc6a168bdb7801e4a934eab5c49fab74d4e2400c45b2746a60282451">
                 </div>
                 <div class="pie">
                     <h1 class="jj">Registro</h1>

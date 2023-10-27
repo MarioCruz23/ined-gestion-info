@@ -43,6 +43,19 @@
         padding: 2px;
         
     }
+    @media (max-width: 767px) {
+        .galeria {
+            width: 100%;
+            max-width: 120px;
+            height: 120px;
+        }
+        .jj {
+            font-size: 14px;
+        }
+        .jjj {
+            font-size: 14px;
+        }
+    }
 </style>
 <body>
     <h1 class="j">Menú de gestión de Cursos</h1>

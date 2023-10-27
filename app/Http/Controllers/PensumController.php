@@ -7,6 +7,10 @@ use App\Models\pensum;
 
 class PensumController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function registro(){
         return view('pensum.registro');
     }

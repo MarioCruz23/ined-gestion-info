@@ -8,6 +8,10 @@ use App\Models\padreencargado;
 
 class PadreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function padre (){
         $alumnoids=alumno::all();
         return view('Alumno.formpadre', compact('alumnoids'));
