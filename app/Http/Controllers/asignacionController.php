@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\docente;
+use App\Models\Docente;
 use App\Models\curso;
 use App\Models\asignacion;
-
 
 class asignacionController extends Controller
 {
@@ -15,7 +14,7 @@ class asignacionController extends Controller
         $this->middleware('auth');
     }
     public function formasignacion (){
-        $docenteids=docente::all();
+        $docenteids=Docente::all();
         $cursoids=curso::all();
         return view('docente.formasignacion', compact('cursoids', 'docenteids'));
     }
@@ -40,7 +39,7 @@ class asignacionController extends Controller
     }
     public function editasignacion($id){
         $editasignacion = asignacion::findOrFail($id);
-        $docentes = docente::all();
+        $docentes = Docente::all();
         $cursos = curso::all();
         return view('docente.editasignacion', compact('editasignacion', 'docentes', 'cursos'));
     }
