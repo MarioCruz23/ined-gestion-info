@@ -124,7 +124,7 @@
                             <br>
                             <div class="row form-group">
                                 <div class="col-md-6"> 
-                                    <label form="archivo" class="col-form-label">Archivo subido:</label>
+                                    <label for="archivo" class="col-form-label">Archivo subido:</label>
                                     @if($editadmon->archivo)
                                         <a href="{{ asset('uploads/' . $editadmon->archivo) }}" target="_blank">Ver archivo</a>
                                     @else
@@ -132,13 +132,9 @@
                                     @endif
                                     <input type="file" class="form-control" id="archivo" name="archivo">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="col-md-12 text-center mt-4">
-                                        <label></label>
-                                        <button type="submit" class="btn btn-primary btn-block custom-btn-width">Editar</button>
-                                        <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/listaradmon') }}">Cancelar</a>
-                                    </div>
-                                </div>
+                                <div class="col-md-6 d-flex justify-content-between align-items-center mt-4 mt-md-4">
+                                    <button type="submit" class="btn btn-primary custom-btn-width">Editar</button>
+                                    <a class="btn btn-danger custom-btn-width" href="{{ url('/listaradmon') }}">Cancelar</a>
                                 </div>
                             </div>
                             <br>

@@ -10,14 +10,14 @@
                 <div class="card-body">
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <div class="bg-light text-white p-2">
-                                <h4 class="text-center">Actividad de </h4>
+                            <div class="bg-success text-white p-2">
+                                <h4 class="text-center">Desfile 15 de septiembre</h4>
                                 <div class="container text-center">
-                                    <img src="https://scontent.fgua3-5.fna.fbcdn.net/v/t39.30808-6/332860584_2951326918508562_7026166569630992817_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=hftQ3cVPBb0AX-Dzsiw&_nc_ht=scontent.fgua3-5.fna&oh=00_AfD2m-tnmElnJWDzOV2ehNQQGfGqF9MQ9GsOum2yVREB5w&oe=653ED11B" width="300" height="200">
+                                    <img src="https://scontent.fgua9-1.fna.fbcdn.net/v/t39.30808-6/396265309_252295507832580_1446970822608450018_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=EByEPtJtf6cAX8Yv7uE&_nc_ht=scontent.fgua9-1.fna&oh=00_AfBYofzy9ZubhJI6ClRSHg3KsX4DKJr4N06jQKdt4pUN4g&oe=6549D31C" width="300" height="400">
                                 </div>
                                 <br>
                                 <div class="container text-center">
-                                    <img src="https://scontent.fgua3-3.fna.fbcdn.net/v/t39.30808-6/332474179_608174997846101_1602369313990942712_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tKSZ13T8YpYAX8ApY6a&_nc_ht=scontent.fgua3-3.fna&oh=00_AfCDBbO47dseNt3lWh2usxBnISqdUXyr56sdaOsA9dl1Mg&oe=653F51E8" width="300" height="200">
+                                    <img src="https://scontent.fgua9-1.fna.fbcdn.net/v/t39.30808-6/398493469_252295704499227_4864892087169745911_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=v7jhgHyCgMYAX8Xg18j&_nc_ht=scontent.fgua9-1.fna&oh=00_AfDOn-4801WZjy-GFnXStK68DtiJgqO8J2X7qXcJLU08oQ&oe=654969B8" width="300" height="300">
                                 </div>
                             </div>
                         </div>
@@ -30,13 +30,13 @@
         <div class="row justify-content-end mt-5">
             <div class="col-md-6">
                 <div class="bg-info text-white p-2">
-                    <h4 class="text-center">Actividad de mes de Septiembre</h4>
+                    <h4 class="text-center">Altares Civicos</h4>
                     <div class="container text-center">
-                        <img src="https://scontent.fgua9-1.fna.fbcdn.net/v/t39.30808-6/332784252_1349351942518786_1208529909063811297_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a70bdiMluV8AX-qXOTj&_nc_ht=scontent.fgua9-1.fna&oh=00_AfCSONO7kbvzAUMRP8duHpx-wlgg2Xqd5gRzNfldwOfyjg&oe=654064C0" width="300" height="400">
+                        <img src="https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/398442029_252293677832763_7882983105732090943_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=f3NwOYdhirUAX9-xtyy&_nc_ht=scontent.fgua9-2.fna&oh=00_AfBbOhrL_UNH3G2CSS0h7Pv8ZJWsW9naRALEUDCZF_8jPg&oe=654A9C02" width="300" height="300">
                     </div>
                     <br>
                     <div class="container text-center">
-                        <img src="https://scontent.fgua9-1.fna.fbcdn.net/v/t39.30808-6/332782634_1908030146239325_4289561965178643463_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=VTcJX9wkbw8AX8oLubL&_nc_ht=scontent.fgua9-1.fna&oh=00_AfDnHaabS6xt0GtwUL5K_v5RTm29sadSuMD9lKBnZOeX5Q&oe=653F77D1" width="300" height="200">
+                        <img src="https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/398439147_252293471166117_3568772809533651947_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=s5-srzrjWv0AX-4rllf&_nc_ht=scontent.fgua9-2.fna&oh=00_AfB3K9wh4CeQMOsFqK-A6AEIGFFMwIzU5mXNqG-_7dZC4g&oe=654A0A39" width="300" height="300">
                     </div>
                 </div>
             </div>
@@ -49,14 +49,11 @@
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <div class="bg-secondary text-white p-2">
-                                <h4 class="text-center">Actividad del día del niño </h4>
+                                <h4 class="text-center">Graduandos 2023</h4>
                                 <div class="container text-center">
-                                    <img src="https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/317952229_864521991343699_7694812386913833326_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=1jk4IgrWmSMAX_iRLdz&_nc_ht=scontent.fgua9-2.fna&oh=00_AfBS0RLHKpOXurwxDm02f-NWUzyTTW6BMv9arBM9TJgvoA&oe=65404CDE" width="300" height="400">
+                                    <img src="https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/398441642_1047408969721666_5325842186196240319_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=WYPxBimgOqEAX93oIhW&_nc_ht=scontent.fgua9-2.fna&oh=00_AfCkF33hRX0MJurx_zqOhcuIXY-2UyS22GNrf7uZkigfXA&oe=654AA655" width="300" height="250">
                                 </div>
                                 <br>
-                                <div class="container text-center">
-                                    <img src="https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/318183221_864521944677037_6127396795815092090_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=TQGapjnDo8EAX-a9xiF&_nc_ht=scontent.fgua9-2.fna&oh=00_AfB8TXmcSEnrRwy3HhYtzSjIUKnDUYIiB_3PBxczU6mLwg&oe=653F36F7" width="300" height="400">
-                                </div>
                             </div>
                         </div>
                     </div>

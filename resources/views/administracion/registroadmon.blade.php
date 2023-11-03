@@ -90,8 +90,8 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-6">
-                                    <label form="" class="clo-4">Código de actividad:</label>
-                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoadmon" class="form-control col-md-9">
+                                    <label for="codigoadmon" class="col-8">Código de actividad:</label>
+                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoadmon" id="codigoadmon" class="form-control col-md-9" maxlength="7" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').substring(0, 7);">
                                 </div>
                                 <div class="col-md-6"> 
                                     <label form="" class="clo-4">Nombre de actividad:</label>
@@ -136,10 +136,10 @@
                             </div>
                             <br>
                             <div class="row form-group">
-                                <div class="col-md-6 d-flex justify-content-end">
+                                <div class="col-md-6 col-sm-12 mb-2 mb-md-0 text-center">
                                     <button type="submit" class="btn btn-primary custom-btn-width">Guardar</button>
                                 </div>
-                                <div class="col-md-6"> 
+                                <div class="col-md-6 col-sm-12 text-center"> 
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menuadmon') }}">Cancelar</a>
                                 </div>
                             </div>

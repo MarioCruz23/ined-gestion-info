@@ -100,8 +100,8 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-6">
-                                    <label class="col-8">Código de estudiante:</label>
-                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoalu" class="form-control col-md-9">
+                                    <label for="codigoalu" class="col-8">Código de estudiante:</label>
+                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoalu" id="codigoalu" class="form-control col-md-9" maxlength="7" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').substring(0, 7);">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="col-6">Nombre:</label>

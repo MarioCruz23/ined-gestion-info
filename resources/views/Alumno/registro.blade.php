@@ -100,8 +100,8 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-6">
-                                    <label form="" class="clo-2">Código Estudiante: </label>
-                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoes" class="form-control col-md-9">
+                                    <label for="codigoes" class="col-6">Código Estudiante:</label>
+                                    <input placeholder="ejemplo: A45T87U34" type="text" name="codigoes" id="codigoes" class="form-control col-md-9" maxlength="7" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').substring(0, 7);">
                                 </div>
                                 <div class="col-md-6"> 
                                     <label form="" class="clo-2">Nombre: </label>
@@ -160,11 +160,11 @@
                             </div>
                             <br>
                             <div class="row form-group">
-                                <div class="col-md-6 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary custom-btn-width">Guardar</button>
+                                <div class="col-md-6 col-sm-12 mb-2 mb-md-0 text-center">
+                                    <button type="submit" class="btn btn-primary custom-btn-width btn-block">Guardar</button>
                                 </div>
-                                <div class="col-md-6"> 
-                                    <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menualu') }}">Cancelar</a>
+                                <div class="col-md-6 col-sm-12 text-center">
+                                    <a class="btn btn-danger custom-btn-width btn-block" href="{{ url('/menualu') }}">Cancelar</a>
                                 </div>
                             </div>
                         </div>

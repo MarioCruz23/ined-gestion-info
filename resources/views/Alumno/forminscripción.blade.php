@@ -123,7 +123,7 @@
                         <div class="row form-group">
                             <div class="col-md-6">
                                 <label for="codigoes" class="col-6">Código Estudiante:</label>
-                                <input type="text" name="codigoes" id="codigoes" class="form-control col-md-9">
+                                <input type="text" name="codigoes" id="codigoes" class="form-control col-md-9" maxlength="7" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').substring(0, 7);">
                             </div>
                             <input type="hidden" name="alumno_id" id="alumno_id" value="">
                             <div class="col-md-6"> 

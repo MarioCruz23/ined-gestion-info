@@ -159,10 +159,10 @@
                             </div>
                             <br>
                             <div class="row form-group">
-                                <div class="col-md-6 d-flex justify-content-end">
+                                <div class="col-md-6 col-sm-12 mb-2 mb-md-0 text-center">
                                     <button type="submit" class="btn btn-primary  custom-btn-width">Editar</button>
                                 </div>
-                                <div class="col-md-6"> 
+                                <div class="col-md-6 col-sm-12 text-center"> 
                                     <a class="btn btn-danger btn-block custom-btn-width" href="{{ url('/menualu') }}">Cancelar</a>
                                 </div>
                             </div>
