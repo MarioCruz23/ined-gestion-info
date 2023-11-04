@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Docente;
+use App\Models\curso;
 
 class asignacion extends Model
 {
@@ -12,7 +14,7 @@ class asignacion extends Model
     protected $table = 'asignacion_cursodocente';
 
     public function docente(){
-        return $this->belongsTo(docente::class, 'docente_id');
+        return $this->belongsTo(Docente::class, 'docente_id');
     }
     public function curso(){
         return $this->belongsTo(curso::class, 'curso_id');
